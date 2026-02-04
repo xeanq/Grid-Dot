@@ -88,12 +88,7 @@ export default function SectionWorkWith() {
                                         maxWidth: '100%',
                                         maxHeight: '100%',
                                         objectFit: 'contain',
-                                        filter: 'grayscale(100%) brightness(0.2)', // Darken strictly or match design color? Assuming dark logos based on context.
-                                        // Actually, let's stick to original colors or slightly adjusted standard.
-                                        // Design usually implies standard logos. I'll remove filter for now or check if user specified.
-                                        // User didn't specify color, but mockup usually shows black/dark gray. 
-                                        // Let's use standard display.
-                                        filter: 'none',
+                                        filter: 'grayscale(100%) brightness(0.2)'
                                     }}
                                 />
                             </div>
