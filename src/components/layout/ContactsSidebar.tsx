@@ -56,7 +56,7 @@ export default function ContactsSidebar() {
             Contact Us
           </span>
           <img
-            src="/images/Vector for contacts slidebar.svg"
+            src={`${basePath}/images/Vector for contacts slidebar.svg`}
             alt="Toggle"
             style={{
               width: '10px',

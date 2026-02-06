@@ -198,7 +198,7 @@ export default function SectionContacts() {
                             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '24px' }}>
                                 <input type="checkbox" id="privacy" style={{ marginTop: '4px', width: '16px', height: '16px', border: '1px solid #0B1215', borderRadius: 0, flexShrink: 0 }} />
                                 <label htmlFor="privacy" style={{ fontFamily: 'Scandia, sans-serif', fontSize: '16px', color: '#0B1215', lineHeight: 1.4 }}>
-                                    I agree to the processing of my personal data in accordance with the <a href="/privacy" style={{ fontFamily: 'Scandia, sans-serif', fontWeight: 500, textDecoration: 'underline', color: 'inherit' }}>Privacy Policy.</a>
+                                    I agree to the processing of my personal data in accordance with the <a href={`${basePath}/privacy`} style={{ fontFamily: 'Scandia, sans-serif', fontWeight: 500, textDecoration: 'underline', color: 'inherit' }}>Privacy Policy.</a>
                                 </label>
                             </div>
 

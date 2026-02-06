@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { basePath } from '@/lib/basePath'
 
 export default function Footer() {
   return (
@@ -105,7 +106,7 @@ export default function Footer() {
             <a href="#section-success-stories" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>
               Success Stories — Case Highlights
             </a>
-            <a href="/privacy" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'underline', textUnderlineOffset: '4px', textAlign: 'right' }}>
+            <a href={`${basePath}/privacy`} style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'underline', textUnderlineOffset: '4px', textAlign: 'right' }}>
               Privacy Policy
             </a>
           </div>
@@ -139,7 +140,7 @@ export default function Footer() {
           </div>
 
           <div className="mobile-link-group">
-            <a href="/privacy" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>
+            <a href={`${basePath}/privacy`} style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>
               Privacy Policy
             </a>
           </div>
