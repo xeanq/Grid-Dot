@@ -28,7 +28,7 @@ export default function PrivacyPage() {
                     style={{
                         fontSize: '36px',
                         fontWeight: 700,
-                        marginBottom: '-35px',
+                        marginBottom: '16px',
                         letterSpacing: '-0.02em',
                     }}
                 >
