@@ -15,11 +15,12 @@ export default function MobileMenu() {
 
   return (
     <nav id="mobile-menu" className="mobile-menu">
-      <a href="#section-1" className="mobile-menu__link" onClick={handleClick}>Home</a>
-      <a href="#section-2" className="mobile-menu__link" onClick={handleClick}>About</a>
-      <a href="#section-3" className="mobile-menu__link" onClick={handleClick}>Services</a>
-      <a href="#section-4" className="mobile-menu__link" onClick={handleClick}>Hire</a>
-      <a href="#section-6" className="mobile-menu__link" onClick={handleClick}>Contact</a>
+      <a href="#section-1" className="mobile-menu__link" onClick={handleClick}>Why Extended Expertise</a>
+      <a href="#section-2" className="mobile-menu__link" onClick={handleClick}>What We Offer</a>
+      <a href="#section-3" className="mobile-menu__link" onClick={handleClick}>How It Works</a>
+      <a href="#section-success-stories" className="mobile-menu__link" onClick={handleClick}>Success Stories</a>
+      <a href="#section-commitment" className="mobile-menu__link" onClick={handleClick}>Our Commitment</a>
+      <a href="#section-contacts" className="mobile-menu__link" onClick={handleClick}>Contact</a>
     </nav>
   )
 }

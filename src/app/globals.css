@@ -553,4 +553,27 @@ textarea.input-text {
   #text-on-path-1-desktop {
     display: none !important;
   }
+
+  /* Section 1 padding */
+  #section-1 {
+    padding: 60px 20px !important;
+  }
+
+  /* Section 3 padding */
+  #section-3 {
+    padding: 60px 20px !important;
+  }
+
+  /* Section Work With padding */
+  #section-work-with,
+  #section-commitment,
+  #section-contacts,
+  #page-footer {
+    padding: 60px 20px !important;
+  }
+
+  /* Scroll To Top hide on mobile */
+  .scroll-to-top-btn-mobile-hide {
+    display: none !important;
+  }
 }

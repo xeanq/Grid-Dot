@@ -29,32 +29,43 @@ export default function ScrollToTopButton() {
     }
 
     return (
-        <button
-            onClick={scrollToTop}
-            style={{
-                position: 'fixed',
-                bottom: '40px',
-                right: '40px',
-                zIndex: 99,
-                background: 'transparent',
-                border: 'none',
-                cursor: 'pointer',
-                opacity: isVisible ? 1 : 0,
-                pointerEvents: isVisible ? 'auto' : 'none',
-                transition: 'opacity 0.3s ease-in-out',
-                padding: 0,
-            }}
-            aria-label="Scroll to top"
-        >
-            <img
-                src={`${basePath}/images/Button up.svg`}
-                alt="Scroll to top"
+        <>
+            <style jsx>{`
+                @media (max-width: 639px) {
+                    #scroll-to-top-btn {
+                        display: none !important;
+                    }
+                }
+            `}</style>
+            <button
+                id="scroll-to-top-btn"
+                onClick={scrollToTop}
+                className="scroll-to-top-btn-mobile-hide"
                 style={{
-                    width: '60px', // Assuming standard visible size, adjusting if too big/small
-                    height: '60px',
-                    display: 'block',
+                    position: 'fixed',
+                    bottom: '40px',
+                    right: '40px',
+                    zIndex: 99,
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    opacity: isVisible ? 1 : 0,
+                    pointerEvents: isVisible ? 'auto' : 'none',
+                    transition: 'opacity 0.3s ease-in-out',
+                    padding: 0,
                 }}
-            />
-        </button>
+                aria-label="Scroll to top"
+            >
+                <img
+                    src={`${basePath}/images/Button up.svg`}
+                    alt="Scroll to top"
+                    style={{
+                        width: '60px', // Assuming standard visible size, adjusting if too big/small
+                        height: '60px',
+                        display: 'block',
+                    }}
+                />
+            </button>
+        </>
     )
 }

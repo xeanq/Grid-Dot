@@ -13,15 +13,58 @@ export default function SectionCommitment() {
             }}
         >
             <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
+                <style jsx>{`
+                    .commitment-header {
+                        font-size: 48px;
+                        line-height: 1.1;
+                        margin-bottom: 60px;
+                    }
+                    .commitment-description {
+                        margin-bottom: 80px;
+                        max-width: 800px;
+                    }
+                    .commitment-row {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center; /* Centered on desktop, left on mobile? Screenshot shows Left aligned text? Actually screenshot shows "Our Commitment" huge. Let's default center desktop as per design */
+                        gap: 32px;
+                    }
+                    .commitment-arrow {
+                        width: 150px;
+                    }
+                    @media (max-width: 639px) {
+                        .commitment-header {
+                            font-size: 32px !important;
+                            margin-bottom: 40px !important;
+                        }
+                        .commitment-description {
+                            margin-bottom: 40px !important;
+                        }
+                        .commitment-row {
+                            flex-direction: column-reverse !important; /* Swap order: Black text on top, Orange/Blue on bottom */
+                            align-items: flex-start !important;
+                            justify-content: flex-start !important;
+                            gap: 16px !important;
+                        }
+                        .commitment-arrow {
+                            width: 100% !important;
+                            max-width: 280px; /* Limit width if needed, or full width */
+                        }
+                        /* Ensure text spans are block/flex for alignment */
+                        .commitment-text {
+                            text-align: left !important;
+                            min-width: 0 !important;
+                        }
+                    }
+                `}</style>
+
                 {/* Header */}
                 <h2
+                    className="commitment-header"
                     style={{
                         fontFamily: 'Scandia, sans-serif',
-                        fontSize: '48px',
                         fontWeight: 700,
                         color: '#0B1215',
-                        lineHeight: 1.1,
-                        marginBottom: '60px',
                         textAlign: 'left',
                     }}
                 >
@@ -29,7 +72,7 @@ export default function SectionCommitment() {
                 </h2>
 
                 {/* Description Text */}
-                <div style={{ marginBottom: '80px', maxWidth: '800px' }}>
+                <div className="commitment-description">
                     <p
                         style={{
                             fontFamily: 'Scandia, sans-serif',
@@ -57,11 +100,12 @@ export default function SectionCommitment() {
                 </div>
 
                 {/* Comparison Grid */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', maxWidth: '1000px', margin: '0 auto' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '48px', maxWidth: '1000px', margin: '0 auto' }}>
 
                     {/* Row 1 */}
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px' }}>
+                    <div className="commitment-row">
                         <span
+                            className="commitment-text"
                             style={{
                                 fontFamily: "'Overpass Mono', monospace",
                                 fontSize: '24px',
@@ -72,9 +116,10 @@ export default function SectionCommitment() {
                             digital atelier
                         </span>
 
-                        <img src={`${basePath}/images/Arrow Our Commitment.svg`} alt="arrow" style={{ width: '150px' }} />
+                        <img className="commitment-arrow" src={`${basePath}/images/Arrow Our Commitment.svg`} alt="arrow" />
 
                         <span
+                            className="commitment-text"
                             style={{
                                 fontFamily: 'Scandia, sans-serif',
                                 fontSize: '24px',
@@ -88,8 +133,9 @@ export default function SectionCommitment() {
                     </div>
 
                     {/* Row 2 */}
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px' }}>
+                    <div className="commitment-row">
                         <span
+                            className="commitment-text"
                             style={{
                                 fontFamily: "'Overpass Mono', monospace",
                                 fontSize: '24px',
@@ -100,9 +146,10 @@ export default function SectionCommitment() {
                             extended expertise
                         </span>
 
-                        <img src={`${basePath}/images/Arrow Our Commitment.svg`} alt="arrow" style={{ width: '150px' }} />
+                        <img className="commitment-arrow" src={`${basePath}/images/Arrow Our Commitment.svg`} alt="arrow" />
 
                         <span
+                            className="commitment-text"
                             style={{
                                 fontFamily: 'Scandia, sans-serif',
                                 fontSize: '24px',

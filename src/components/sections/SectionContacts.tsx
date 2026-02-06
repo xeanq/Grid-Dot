@@ -16,17 +16,62 @@ export default function SectionContacts() {
             }}
         >
             <div className="contacts-grid" style={{ maxWidth: '1440px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', gap: '60px' }}>
+                <style jsx>{`
+                    .contacts-grid {
+                        flex-direction: row;
+                    }
+                    .contacts-left-header {
+                        font-size: 48px;
+                        line-height: 1.1;
+                        margin-bottom: 60px;
+                    }
+                    .contact-huge-header {
+                        font-family: 'Scandia', sans-serif;
+                        font-size: 160px;
+                        font-weight: 700;
+                        color: #0B1215;
+                        line-height: 1;
+                        margin-bottom: 80px;
+                        letter-spacing: -0.02em;
+                    }
+                    .form-row-name {
+                        display: flex;
+                        gap: 40px;
+                    }
+                    @media (max-width: 639px) {
+                        .contacts-grid {
+                            flex-direction: column !important;
+                            gap: 60px !important;
+                        }
+                        .contacts-left, .contacts-right {
+                            width: 100% !important;
+                            min-width: 100% !important;
+                            max-width: 100% !important;
+                        }
+                        .contacts-left-header {
+                            font-size: 32px !important;
+                            margin-bottom: 40px !important;
+                        }
+                        .contact-huge-header {
+                            font-size: 80px !important; /* User requested 80px */
+                            margin-bottom: 40px !important;
+                        }
+                        .form-row-name {
+                            flex-direction: column !important;
+                            gap: 40px !important;
+                        }
+                    }
+                `}</style>
 
                 {/* Left Column: Info & CTA */}
                 <div className="contacts-left" style={{ flex: '1', minWidth: '300px', maxWidth: '500px' }}>
                     <h2
+                        className="contacts-left-header"
                         style={{
                             fontFamily: 'Scandia, sans-serif',
-                            fontSize: '48px',
                             fontWeight: 700,
                             color: '#0B1215',
-                            lineHeight: 1.1,
-                            marginBottom: '60px',
+                            textAlign: 'left',
                         }}
                     >
                         Let’s talk,<br />
@@ -69,6 +114,7 @@ export default function SectionContacts() {
                         style={{
                             display: 'inline-flex',
                             alignItems: 'center',
+                            justifyContent: 'space-between', /* Changed from center to space-between for left-aligned text */
                             padding: '16px 32px',
                             backgroundColor: 'transparent',
                             border: '2px solid #0033FF',
@@ -78,48 +124,40 @@ export default function SectionContacts() {
                             fontWeight: 700,
                             cursor: 'pointer',
                             marginTop: '40px',
+                            width: '100%', /* Mobile full width often looks better, but let's see. Left align desktop, full mobile? */
+                            maxWidth: '100%',
                         }}
                     >
                         Book a Call
                         <img src={`${basePath}/images/Arrow 6.svg`} alt="arrow" style={{ marginLeft: '12px', width: '14px', height: '14px', transform: 'rotate(-45deg)' }} />
-                        {/* Note: Arrow 6 usually points up-right, might need rotation if design implies horizontal or specific direction. 
-                Based on "Arrow 6.svg" often being a 45deg arrow. Left as is or rotated? 
-                Let's assume standard usage. If it's a "Go" arrow, usually 45deg up-right. 
-                I will leave it standard for now, checking rotation later if needed. 
-            */}
                     </button>
+                    {/* Note: Button width on desktop was inline-flex. On mobile full width might be better. 
+                        Let's keep it consistent: inline-flex desktop, full width mobile? 
+                        Current style sets width: 100%. This will make it full width on desktop too if container allows. 
+                        Container is 500px max. Full width button there is okay. 
+                    */}
                 </div>
 
                 {/* Right Column: Form */}
                 <div className="contacts-right" style={{ flex: '2', minWidth: '400px', maxWidth: '800px' }}>
-                    <h2
-                        style={{
-                            fontFamily: 'Scandia, sans-serif',
-                            fontSize: '160px',
-                            fontWeight: 700,
-                            color: '#0B1215',
-                            lineHeight: 1,
-                            marginBottom: '80px',
-                            letterSpacing: '-0.02em',
-                        }}
-                    >
+                    <h2 className="contact-huge-header">
                         contact
                     </h2>
 
                     <form style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
                         {/* Name Row */}
-                        <div style={{ display: 'flex', gap: '40px' }}>
+                        <div className="form-row-name">
                             <div style={{ flex: 1 }}>
                                 <label style={{ display: 'block', fontFamily: 'Scandia, sans-serif', fontSize: '20px', fontWeight: 700, color: '#656565', marginBottom: '8px' }}>
                                     first name*
                                 </label>
-                                <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none' }} />
+                                <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none', borderRadius: 0 }} />
                             </div>
                             <div style={{ flex: 1 }}>
                                 <label style={{ display: 'block', fontFamily: 'Scandia, sans-serif', fontSize: '20px', fontWeight: 700, color: '#656565', marginBottom: '8px' }}>
                                     last name*
                                 </label>
-                                <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none' }} />
+                                <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none', borderRadius: 0 }} />
                             </div>
                         </div>
 
@@ -128,7 +166,7 @@ export default function SectionContacts() {
                             <label style={{ display: 'block', fontFamily: 'Scandia, sans-serif', fontSize: '20px', fontWeight: 700, color: '#656565', marginBottom: '8px' }}>
                                 e-mail address*
                             </label>
-                            <input type="email" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none' }} />
+                            <input type="email" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none', borderRadius: 0 }} />
                         </div>
 
                         {/* Looking For (Select) */}
@@ -137,12 +175,12 @@ export default function SectionContacts() {
                                 what are you looking for?*
                             </label>
                             <div style={{ display: 'flex', alignItems: 'center', borderBottom: '2px solid #0B1215', paddingBottom: '8px' }}>
-                                <select defaultValue="" style={{ width: '100%', border: 'none', background: 'transparent', outline: 'none', appearance: 'none', fontFamily: 'Scandia, sans-serif', fontSize: '16px', color: '#0B1215' }}>
+                                <select defaultValue="" style={{ width: '100%', border: 'none', background: 'transparent', outline: 'none', appearance: 'none', fontFamily: 'Scandia, sans-serif', fontSize: '16px', color: '#0B1215', borderRadius: 0 }}>
                                     <option value="" disabled>Select an option</option>
                                     <option value="specialists">Specialists</option>
                                     <option value="consulting">Consulting</option>
                                 </select>
-                                {/* Custom Arrow for select if needed, or browser default hidden */}
+                                {/* Custom Arrow for select */}
                                 <img src={`${basePath}/images/icon-arrow-horizontal.svg`} style={{ transform: 'rotate(90deg)', width: '20px' }} alt="" />
                             </div>
                         </div>
@@ -152,13 +190,13 @@ export default function SectionContacts() {
                             <label style={{ display: 'block', fontFamily: 'Scandia, sans-serif', fontSize: '20px', fontWeight: 700, color: '#656565', marginBottom: '8px' }}>
                                 tell us about your context
                             </label>
-                            <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none' }} />
+                            <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none', borderRadius: 0 }} />
                         </div>
 
                         {/* Footer / Privacy */}
                         <div style={{ marginTop: '40px' }}>
                             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '24px' }}>
-                                <input type="checkbox" id="privacy" style={{ marginTop: '4px', width: '16px', height: '16px', border: '1px solid #0B1215' }} />
+                                <input type="checkbox" id="privacy" style={{ marginTop: '4px', width: '16px', height: '16px', border: '1px solid #0B1215', borderRadius: 0, flexShrink: 0 }} />
                                 <label htmlFor="privacy" style={{ fontFamily: 'Scandia, sans-serif', fontSize: '16px', color: '#0B1215', lineHeight: 1.4 }}>
                                     I agree to the processing of my personal data in accordance with the <a href="/privacy" style={{ fontFamily: 'Scandia, sans-serif', fontWeight: 500, textDecoration: 'underline', color: 'inherit' }}>Privacy Policy.</a>
                                 </label>
@@ -186,7 +224,7 @@ export default function SectionContacts() {
                                     color: '#0033FF',
                                     textDecoration: 'underline',
                                     textUnderlineOffset: '4px',
-                                    float: 'right', // Align right as per "Start a Conversation Arrow" usually at end
+                                    float: 'left', // Align left
                                 }}
                             >
                                 Start a Conversation

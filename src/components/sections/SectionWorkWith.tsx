@@ -24,8 +24,9 @@ export default function SectionWorkWith() {
             }}
         >
             <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative' }}>
-                {/* Header */}
+                {/* HEADER */}
                 <h2
+                    className="desktop-only"
                     style={{
                         fontFamily: 'Scandia, sans-serif',
                         fontSize: '48px',
@@ -39,8 +40,49 @@ export default function SectionWorkWith() {
                     We are pleased to work with
                 </h2>
 
-                {/* Slider Container */}
+                <h2
+                    className="mobile-only"
+                    style={{
+                        fontFamily: 'Scandia, sans-serif',
+                        fontSize: '32px',
+                        fontWeight: 700,
+                        color: '#0B1215',
+                        lineHeight: 1.1,
+                        marginBottom: '40px',
+                        textAlign: 'left',
+                    }}
+                >
+                    We are pleased<br />to work with
+                </h2>
+
+                <style jsx>{`
+                    @media (max-width: 639px) {
+                         #section-work-with {
+                            padding: 60px 40px !important;
+                        }
+                    }
+                    @keyframes scroll {
+                      0% { transform: translateX(0); }
+                      100% { transform: translateX(-50%); }
+                    }
+                    .slider-track {
+                      display: flex;
+                      width: fit-content;
+                      animation: scroll 40s linear infinite;
+                    }
+                    /* Hide scrollbar for mobile slider */
+                    .mobile-slider::-webkit-scrollbar {
+                        display: none;
+                    }
+                    .mobile-slider {
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                    }
+                `}</style>
+
+                {/* Slider Container (Desktop) */}
                 <div
+                    className="desktop-only"
                     style={{
                         position: 'relative',
                         width: '100%',
@@ -50,23 +92,6 @@ export default function SectionWorkWith() {
                         WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
                     }}
                 >
-                    <style jsx>{`
-            @keyframes scroll {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
-            }
-            .slider-track {
-              display: flex;
-              width: fit-content;
-              animation: scroll 40s linear infinite;
-            }
-            .slider-track {
-              display: flex;
-              width: fit-content;
-              animation: scroll 40s linear infinite;
-            }
-          `}</style>
-
                     <div className="slider-track">
                         {/* Quadruple the logos for seamless infinite effect on large screens */}
                         {[...LOGOS, ...LOGOS, ...LOGOS, ...LOGOS].map((logo, index) => (
@@ -97,8 +122,51 @@ export default function SectionWorkWith() {
                     </div>
                 </div>
 
+                {/* Mobile Grid / Slider (2 Rows Horizontal Scroll) */}
+                <div className="mobile-only" style={{ marginBottom: '60px' }}>
+                    <div
+                        className="mobile-slider"
+                        style={{
+                            display: 'grid',
+                            gridTemplateRows: 'repeat(2, 1fr)',
+                            gridAutoFlow: 'column',
+                            columnGap: '40px', /* Spacing between columns */
+                            rowGap: '40px',    /* Spacing between rows */
+                            overflowX: 'auto',
+                            // With standard width, padding inside the scroll container is fine for scroll snap/start/end but if width is constrained, it pushes content in.
+                            // ...
+                            padding: 0,
+                        }}
+                    >
+                        {/* Duplicate logos to ensure enough content for scrolling effect if needed, fitting 7 items in 2 rows means 4 colums. 7 items is fine. */}
+                        {LOGOS.map((logo, index) => (
+                            <div
+                                key={`mobile-${index}`}
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '140px', /* Fixed width for columns */
+                                    height: '50px', /* Fixed height for rows */
+                                }}
+                            >
+                                <img
+                                    src={`${basePath}/images/${logo}`}
+                                    alt={logo.replace('.png', '')}
+                                    style={{
+                                        maxWidth: '100%',
+                                        maxHeight: '100%', // Scale down further?
+                                        objectFit: 'contain',
+                                        filter: 'grayscale(100%) brightness(0.2)' // Ensure opacity matches reference if possible? Reference was dark logos. filter brightness 0.2 makes them dark.
+                                    }}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
                 {/* Footer Arrow */}
-                <div style={{ width: '100%' }}>
+                <div className="desktop-only" style={{ width: '100%', padding: '0 20px' }}>
                     <img
                         src={`${basePath}/images/Arrow Work with.svg`}
                         alt="Arrow"
@@ -110,6 +178,6 @@ export default function SectionWorkWith() {
                     />
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
