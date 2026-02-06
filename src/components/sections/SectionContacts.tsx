@@ -137,8 +137,8 @@ export default function SectionContacts() {
                                 what are you looking for?*
                             </label>
                             <div style={{ display: 'flex', alignItems: 'center', borderBottom: '2px solid #0B1215', paddingBottom: '8px' }}>
-                                <select style={{ width: '100%', border: 'none', background: 'transparent', outline: 'none', appearance: 'none', fontFamily: 'Scandia, sans-serif', fontSize: '16px', color: '#0B1215' }}>
-                                    <option value="" disabled selected>Select an option</option>
+                                <select defaultValue="" style={{ width: '100%', border: 'none', background: 'transparent', outline: 'none', appearance: 'none', fontFamily: 'Scandia, sans-serif', fontSize: '16px', color: '#0B1215' }}>
+                                    <option value="" disabled>Select an option</option>
                                     <option value="specialists">Specialists</option>
                                     <option value="consulting">Consulting</option>
                                 </select>
