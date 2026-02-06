@@ -124,12 +124,12 @@ export default function SectionContacts() {
                             fontWeight: 700,
                             cursor: 'pointer',
                             marginTop: '40px',
-                            width: '100%', /* Mobile full width often looks better, but let's see. Left align desktop, full mobile? */
+                            width: '70%', /* Mobile full width often looks better, but let's see. Left align desktop, full mobile? */
                             maxWidth: '100%',
                         }}
                     >
                         Book a Call
-                        <img src={`${basePath}/images/Arrow 6.svg`} alt="arrow" style={{ marginLeft: '12px', width: '14px', height: '14px', transform: 'rotate(-45deg)' }} />
+                        <img src={`${basePath}/images/Arrow 6.svg`} alt="arrow" style={{ marginLeft: '12px', width: '14px', height: '14px' }} />
                     </button>
                     {/* Note: Button width on desktop was inline-flex. On mobile full width might be better. 
                         Let's keep it consistent: inline-flex desktop, full width mobile? 
