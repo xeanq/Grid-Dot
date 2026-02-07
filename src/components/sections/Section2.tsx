@@ -6,19 +6,19 @@ import { SECTION_2 } from '@/lib/constants'
 // Data structure for reuse
 const EXPERTISE_DATA = [
   {
-    title: 'Product & Strategy',
+    title: 'Product &\nStrategy',
     roles: ['Product Managers', 'Product Analysts', 'Business Analysts (BA)']
   },
   {
-    title: 'Experience, Content & CMS',
+    title: 'Experience,\nContent & CMS',
     roles: ['UX / UI Designers', 'CMS Editors', 'Content Specialists']
   },
   {
-    title: 'Data & Architecture',
+    title: 'Data &\nArchitecture',
     roles: ['Data Scientists', 'Data Analysts', 'AI Solution Architects']
   },
   {
-    title: 'Delivery, Quality & Rollout',
+    title: 'Delivery, Quality\n& Rollout',
     roles: [
       'Producers',
       'QA Specialists',
@@ -62,7 +62,9 @@ export default function Section2() {
 
       <style jsx>{`
         .section-2-title {
-          fontSize: 48px;
+          font-family: 'Scandia', sans-serif;
+          font-weight: 700;
+          font-size: 48px;
         }
         @media (max-width: 639px) {
           #section-2 {
@@ -88,8 +90,8 @@ export default function Section2() {
         {/* Row 1: Categories */}
         {EXPERTISE_DATA.map((item, index) => (
           <div key={`cat-${index}`} style={{ borderBottom: '1px solid #0B1215', paddingBottom: '20px' }}>
-            <h3 style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0B1215', margin: 0 }}>
-              {item.title.split(' & ').join(' &\n').split(', ').join(',\n').split('\n').map((line, i) => (
+            <h3 style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0B1215', margin: 0, lineHeight: 1.2 }}>
+              {item.title.split('\n').map((line, i) => (
                 <span key={i}>{line}<br /></span>
               ))}
             </h3>
@@ -137,7 +139,7 @@ export default function Section2() {
                       color: '#0B1215',
                     }}
                   >
-                    {typeof item.title === 'string' ? item.title.replace(' & ', ' & ') : item.title}
+                    {typeof item.title === 'string' ? item.title.replace('\n', ' ') : item.title}
                   </span>
                   <div style={{ position: 'relative', width: '20px', height: '20px' }}>
                     {/* Horizontal line (always visible) */}

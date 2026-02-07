@@ -23,22 +23,30 @@ export default function ContactsSidebar() {
         onMouseEnter={() => setSidebarDesktopHover(true)}
         onMouseLeave={() => setSidebarDesktopHover(false)}
       >
-        <p>
-          <a href={`mailto:${CONTACTS.email}`} className="link">{CONTACTS.email}</a>
-        </p>
-        <p>
-          <a href={`tel:${CONTACTS.phone}`} className="link">{CONTACTS.phone}</a>
-        </p>
-        <p>
-          <a href={`https://t.me/${CONTACTS.telegram.replace('@', '')}`} className="link" target="_blank" rel="noopener noreferrer">
-            Telegram
-          </a>
-        </p>
-        <p>
-          <a href={`https://wa.me/${CONTACTS.whatsapp}`} className="link" target="_blank" rel="noopener noreferrer">
-            WhatsApp
-          </a>
-        </p>
+        {CONTACTS.email && (
+          <p>
+            <a href={`mailto:${CONTACTS.email}`} className="link">{CONTACTS.email}</a>
+          </p>
+        )}
+        {CONTACTS.phone && (
+          <p>
+            <a href={`tel:${CONTACTS.phone}`} className="link">{CONTACTS.phone}</a>
+          </p>
+        )}
+        {CONTACTS.telegram && (
+          <p>
+            <a href={`https://t.me/${CONTACTS.telegram.replace('@', '')}`} className="link" target="_blank" rel="noopener noreferrer">
+              Telegram
+            </a>
+          </p>
+        )}
+        {CONTACTS.whatsapp && (
+          <p>
+            <a href={`https://wa.me/${CONTACTS.whatsapp}`} className="link" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+          </p>
+        )}
 
         <button id="contact-sidebar-toggle" onClick={toggleSidebarDesktop}>
           <span
@@ -83,7 +91,8 @@ export default function ContactsSidebar() {
             padding: 20px;
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: center; /* Center content since we might have fewer items */
+            gap: 20px; /* Add gap between icons */
             width: 100%;
           }
           .contact-mobile-link {
@@ -124,18 +133,26 @@ export default function ContactsSidebar() {
 
         {sidebarMobileExpanded && (
           <div className="contact-mobile-expanded-content">
-            <a href={`https://wa.me/${CONTACTS.whatsapp}`} target="_blank" rel="noopener noreferrer" className="contact-mobile-link" aria-label="WhatsApp">
-              <img src={`${basePath}/images/icon-whatsapp.svg`} alt="WhatsApp" />
-            </a>
-            <a href={`https://t.me/${CONTACTS.telegram.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="contact-mobile-link" aria-label="Telegram">
-              <img src={`${basePath}/images/icon-telegram.svg`} alt="Telegram" />
-            </a>
-            <a href={`mailto:${CONTACTS.email}`} className="contact-mobile-link" aria-label="Email">
-              <img src={`${basePath}/images/icon-email.svg`} alt="Email" />
-            </a>
-            <a href={`tel:${CONTACTS.phone}`} className="contact-mobile-link" aria-label="Phone">
-              <img src={`${basePath}/images/icon-phone-2.svg`} alt="Phone" />
-            </a>
+            {CONTACTS.whatsapp && (
+              <a href={`https://wa.me/${CONTACTS.whatsapp}`} target="_blank" rel="noopener noreferrer" className="contact-mobile-link" aria-label="WhatsApp">
+                <img src={`${basePath}/images/icon-whatsapp.svg`} alt="WhatsApp" />
+              </a>
+            )}
+            {CONTACTS.telegram && (
+              <a href={`https://t.me/${CONTACTS.telegram.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="contact-mobile-link" aria-label="Telegram">
+                <img src={`${basePath}/images/icon-telegram.svg`} alt="Telegram" />
+              </a>
+            )}
+            {CONTACTS.email && (
+              <a href={`mailto:${CONTACTS.email}`} className="contact-mobile-link" aria-label="Email">
+                <img src={`${basePath}/images/icon-email.svg`} alt="Email" />
+              </a>
+            )}
+            {CONTACTS.phone && (
+              <a href={`tel:${CONTACTS.phone}`} className="contact-mobile-link" aria-label="Phone">
+                <img src={`${basePath}/images/icon-phone-2.svg`} alt="Phone" />
+              </a>
+            )}
           </div>
         )}
       </aside>

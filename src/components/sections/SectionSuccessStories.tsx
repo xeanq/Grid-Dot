@@ -88,7 +88,7 @@ export default function SectionSuccessStories() {
                 }}
             />
 
-            <div style={{ position: 'relative', zIndex: 1, maxWidth: '1000px', margin: '0 auto' }}>
+            <div style={{ position: 'relative', zIndex: 1, maxWidth: '1000px', margin: '0' }}>
                 {/* Mobile Header */}
                 <h2
                     className="mobile-only"
@@ -179,7 +179,7 @@ export default function SectionSuccessStories() {
                         <h4
                             style={{
                                 fontFamily: 'Scandia, sans-serif',
-                                fontSize: '24px',
+                                fontSize: '16px',
                                 fontWeight: 500,
                                 color: '#0B1215',
                                 marginBottom: '16px',
@@ -220,7 +220,7 @@ export default function SectionSuccessStories() {
 
                         {/* Row 1 */}
                         <div>
-                            <h5 style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 500, color: '#0B1215', margin: 0 }}>
+                            <h5 style={{ fontFamily: 'Scandia, sans-serif', fontSize: '16px', fontWeight: 500, color: '#0B1215', margin: 0 }}>
                                 Global Data
                             </h5>
                         </div>
@@ -234,7 +234,7 @@ export default function SectionSuccessStories() {
 
                         {/* Row 2 */}
                         <div>
-                            <h5 style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 500, color: '#0B1215', margin: 0 }}>
+                            <h5 style={{ fontFamily: 'Scandia, sans-serif', fontSize: '16px', fontWeight: 500, color: '#0B1215', margin: 0 }}>
                                 Global Product
                             </h5>
                         </div>
@@ -248,7 +248,7 @@ export default function SectionSuccessStories() {
 
                         {/* Row 3 */}
                         <div>
-                            <h5 style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 500, color: '#0B1215', margin: 0 }}>
+                            <h5 style={{ fontFamily: 'Scandia, sans-serif', fontSize: '16px', fontWeight: 500, color: '#0B1215', margin: 0 }}>
                                 Regional Delivery<br />
                                 EMEA, APAC
                             </h5>
@@ -262,7 +262,7 @@ export default function SectionSuccessStories() {
 
                         {/* Row 4 */}
                         <div>
-                            <h5 style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 500, color: '#0B1215', margin: 0 }}>
+                            <h5 style={{ fontFamily: 'Scandia, sans-serif', fontSize: '16px', fontWeight: 500, color: '#0B1215', margin: 0 }}>
                                 Brand Experience
                             </h5>
                         </div>

@@ -14,8 +14,7 @@ export default function Section4() {
         position: 'relative',
         display: 'block',
         width: '100%',
-        paddingTop: '30px',
-        paddingBottom: '80px',
+        padding: '30px 73px 80px',
       }}
     >
       {/* Main headline with curved text */}
@@ -26,7 +25,7 @@ export default function Section4() {
         className="text-on-path"
         src={`${basePath}/images/text-on-path-new-desktop.svg`}
         alt=""
-        style={{ top: '50px', zIndex: -1, left: '-60px' }}
+        style={{ top: '50px', zIndex: -1, left: '0', width: '100%' }}
       />
       <img
         id="text-on-path-1-mobile"
@@ -48,7 +47,7 @@ export default function Section4() {
         className="desktop-only"
         style={{
           display: 'flex',
-          justifyContent: 'center', // Center the content blocks
+          justifyContent: 'flex-start', // Left aligned
           alignItems: 'flex-start',
           gap: '80px', // Increased gap
           marginTop: '60px',
@@ -74,7 +73,7 @@ export default function Section4() {
           <p
             style={{
               fontFamily: 'Scandia, sans-serif',
-              fontSize: 'clamp(24px, 3vw, 36px)',
+              fontSize: '48px',
               fontWeight: 700,
               color: '#0B1215',
               margin: '0 0 32px 0',
@@ -131,7 +130,7 @@ export default function Section4() {
               margin: 0,
             }}
           >
-            We help digital-first teams solve skill<br />gaps fast — with carefully selected<br />specialists who don't just fill seats,<br />but add value from day one.
+            We help digital-first teams solve skill<br />gaps fast — with carefully selected<br />specialists who don't just fill seats, but add value from day one.
           </p>
         </div>
       </div>

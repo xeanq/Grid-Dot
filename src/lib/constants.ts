@@ -75,8 +75,8 @@ export const FOOTER = {
 }
 
 export const CONTACTS = {
-  email: '[email protected]',
-  phone: '+1 (555) 123-4567',
-  telegram: '@gridanddot',
-  whatsapp: '+15551234567',
+  email: 'engagement@gridanddot.com',
+  phone: '', // Removed placeholder
+  telegram: '', // Removed placeholder
+  whatsapp: '', // Removed placeholder
 }

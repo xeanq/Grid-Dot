@@ -308,22 +308,45 @@
   margin-top: -10px;
 }
 
-/* Section 4 - CTA */
-#section-4 .offset-line-2 {
-  transform: translateX(34vw);
-}
-
 @media (max-width: 639px) {
+  #section-4 {
+    padding: 60px 0 80px !important;
+  }
+
+
   #section-4 .offset-line-2 {
     transform: none;
   }
+
 }
 
-#section-4 .offset-line-3 {
-  transform: translateX(9vw);
-  position: relative;
-  display: inline-block;
-  z-index: 1;
+/* Fix for Hero Scaling - Desktop Only */
+@media (min-width: 639px) {
+  #section-4 {
+    padding: 30px 73px 80px !important;
+  }
+
+  #section-4 h1 {
+    font-size: min(11vw, 160px) !important;
+    line-height: 1.1 !important;
+  }
+
+  #section-4 .offset-line-1,
+  #section-4 .offset-line-2,
+  #section-4 .offset-line-3 {
+    display: block !important;
+    position: relative;
+    width: fit-content;
+  }
+
+  #section-4 .offset-line-2 {
+    transform: translateX(min(34vw, 490px));
+  }
+
+  #section-4 .offset-line-3 {
+    transform: translateX(min(9vw, 130px));
+    z-index: 1;
+  }
 }
 
 @media (max-width: 639px) {
@@ -332,7 +355,60 @@
   }
 }
 
-/* Section 5 - Partners */
+@media (min-width: 1500px) {
+  .section-1-running-text {
+    transform: translateX(-50%) translateY(40px) !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .section-1-running-text {
+    transform: translateX(-50%) translateY(65px) !important;
+  }
+}
+
+@media (min-width: 1700px) {
+  .section-1-running-text {
+    transform: translateX(-50%) translateY(90px) !important;
+  }
+
+  .section-1-extended-header,
+  .section-1-extended-list {
+    transform: translateY(-15px);
+    /* Move text UP slightly */
+  }
+}
+
+@media (min-width: 1800px) {
+  .section-1-running-text {
+    transform: translateX(-50%) translateY(115px) !important;
+  }
+}
+
+@media (min-width: 1900px) {
+  .section-1-running-text {
+    transform: translateX(-50%) translateY(140px) !important;
+  }
+}
+
+@media (min-width: 2000px) {
+  .section-1-running-text {
+    transform: translateX(-50%) translateY(165px) !important;
+  }
+}
+
+@media (min-width: 2100px) {
+  .section-1-running-text {
+    transform: translateX(-50%) translateY(190px) !important;
+  }
+}
+
+@media (min-width: 2200px) {
+  .section-1-running-text {
+    transform: translateX(-50%) translateY(215px) !important;
+  }
+}
+
 #section-5 .section-partners-logos {
   display: flex;
   justify-content: space-between;

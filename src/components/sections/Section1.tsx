@@ -71,8 +71,10 @@ export default function Section1() {
             style={{
               position: 'absolute',
               top: '0px',
-              left: '40px',
+              left: '50%',
+              transform: 'translateX(-50%)',
               width: '100%',
+              maxWidth: '1440px', // Cap width to prevent vertical scaling drift
               height: 'auto',
               zIndex: 1,
               pointerEvents: 'none',
@@ -83,11 +85,13 @@ export default function Section1() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1px 1fr',
+              gridTemplateColumns: 'minmax(0, 1fr) 1px minmax(0, 1fr)',
               columnGap: '0',
               fontFamily: 'Scandia, sans-serif',
               position: 'relative',
               zIndex: 2,
+              maxWidth: '1440px', // Match SVG max-width
+              margin: '0 auto',   // Center the grid
             }}
           >
             {/* Row 1 Headers */}
@@ -104,7 +108,7 @@ export default function Section1() {
               </h3>
             </div>
 
-            <div style={{ gridColumn: '3 / 4', paddingLeft: '40px', marginBottom: '90px' }}>
+            <div className="section-1-extended-header" style={{ gridColumn: '3 / 4', paddingLeft: '40px', marginBottom: '90px' }}>
               <h3
                 style={{
                   fontSize: '24px',
@@ -135,7 +139,7 @@ export default function Section1() {
               </ul>
             </div>
 
-            <div style={{ gridColumn: '3 / 4', paddingLeft: '40px' }}>
+            <div className="section-1-extended-list" style={{ gridColumn: '3 / 4', paddingLeft: '40px' }}>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '32px' }}>
                 {['Curate specialists', 'Quality-driven', 'Long-term fit', 'Ongoing support'].map((item) => (
                   <li
@@ -253,7 +257,7 @@ export default function Section1() {
       <img
         src={`${basePath}/images/text-on-path-3-desktop.svg`}
         alt=""
-        className="text-on-path desktop-only"
+        className="text-on-path desktop-only section-1-running-text"
         style={{
           position: 'absolute',
           top: 'auto',
@@ -266,7 +270,6 @@ export default function Section1() {
           pointerEvents: 'none',
           zIndex: 0,
           display: 'block',
-          maxWidth: 'none',
         }}
       />
     </section>

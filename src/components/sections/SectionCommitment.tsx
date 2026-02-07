@@ -15,6 +15,8 @@ export default function SectionCommitment() {
             <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
                 <style jsx>{`
                     .commitment-header {
+                        font-family: 'Scandia', sans-serif;
+                        font-weight: 700;
                         font-size: 48px;
                         line-height: 1.1;
                         margin-bottom: 60px;

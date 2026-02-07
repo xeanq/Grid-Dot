@@ -21,6 +21,8 @@ export default function SectionContacts() {
                         flex-direction: row;
                     }
                     .contacts-left-header {
+                        font-family: 'Scandia', sans-serif;
+                        font-weight: 700;
                         font-size: 48px;
                         line-height: 1.1;
                         margin-bottom: 60px;
