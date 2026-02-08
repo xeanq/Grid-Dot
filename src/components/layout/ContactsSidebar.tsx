@@ -72,7 +72,7 @@ export default function ContactsSidebar() {
             style={{
               writingMode: 'vertical-rl',
               textOrientation: 'mixed',
-              fontFamily: "'Scandia'",
+              // fontFamily: "'Scandia'",
               fontSize: '24px',
               fontWeight: 700,
               letterSpacing: '0.15em',
