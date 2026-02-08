@@ -8,14 +8,14 @@ export default function Section1() {
       id="section-1"
       style={{
         position: 'relative',
-        padding: '100px 73px 80px',
+        padding: '100px 73px 180px', // Increased bottom padding
         backgroundColor: '#F2F0EF',
       }}
     >
       {/* Desktop Layout */}
-      <div className="desktop-only">
+      < div className="desktop-only" >
         {/* Top Row: Headline and Description */}
-        <div
+        < div
           style={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -42,9 +42,13 @@ export default function Section1() {
           <div
             style={{
               backgroundColor: '#F8F8F8',
-              padding: '32px',
+              padding: '50px',
+              minHeight: '220px',
               maxWidth: '500px',
               flex: '1 1 300px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center'
             }}
           >
             <p
@@ -60,12 +64,12 @@ export default function Section1() {
               Unlike traditional recruiters who send lists of CVs and hope for the best, we curate talent that fits your culture, workflows, and goals.
             </p>
           </div>
-        </div>
+        </div >
 
         {/* Comparison Grid with SVG Background */}
-        <div style={{ position: 'relative' }}>
+        < div style={{ position: 'relative' }}>
           {/* SVG Structure Layer */}
-          <img
+          < img
             src={`${basePath}/images/grid+vs+next.svg`}
             alt=""
             style={{
@@ -129,7 +133,7 @@ export default function Section1() {
                     key={item}
                     style={{
                       fontSize: '24px',
-                      fontWeight: 500,
+                      fontWeight: 400,
                       color: '#656565',
                     }}
                   >
@@ -156,11 +160,11 @@ export default function Section1() {
               </ul>
             </div>
           </div>
-        </div>
-      </div>
+        </div >
+      </div >
 
       {/* Mobile Layout */}
-      <div className="mobile-only">
+      < div className="mobile-only" >
         <h2
           style={{
             fontFamily: 'Scandia, sans-serif',
@@ -250,7 +254,7 @@ export default function Section1() {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
       {/* Animated Text Path */}
       {/* Animated Text Path Footer */}
@@ -272,6 +276,6 @@ export default function Section1() {
           display: 'block',
         }}
       />
-    </section>
+    </section >
   )
 }

@@ -6,6 +6,15 @@ import { basePath } from '@/lib/basePath'
 
 export default function SectionContacts() {
     const { scrollTo } = useApp()
+    const [dropdownOpen, setDropdownOpen] = React.useState(false)
+    const [selectedOption, setSelectedOption] = React.useState('')
+
+    const options = [
+        'extended team support',
+        'specific role / specialist',
+        'requesting a case',
+        'not sure yet'
+    ]
 
     return (
         <section
@@ -15,7 +24,7 @@ export default function SectionContacts() {
                 backgroundColor: '#F2F0EF',
             }}
         >
-            <div className="contacts-grid" style={{ maxWidth: '1440px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', gap: '60px' }}>
+            <div className="contacts-grid" style={{ maxWidth: '1440px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', gap: '60px', alignItems: 'flex-start' }}>
                 <style jsx>{`
                     .contacts-grid {
                         flex-direction: row;
@@ -35,10 +44,59 @@ export default function SectionContacts() {
                         line-height: 1;
                         margin-bottom: 80px;
                         letter-spacing: -0.02em;
+                        margin-top: -25px; /* Optical adjustment for alignment */
                     }
                     .form-row-name {
                         display: flex;
                         gap: 40px;
+                    }
+                    .custom-dropdown-overlay {
+                        display: none; /* Disable overlay for accordion style, or keep if we want click-outside. 
+                                          If it pushes content, usually we don't use a full screen blocker. 
+                                          User said "appear and shift content down". 
+                                          I'll remove the overlay concept for this "accordion" mode or make it transparent/non-blocking if not needed.
+                                          Actually, let's remove the overlay div usage in JSX effectively by hiding it or removing it.
+                                          But wait, if I remove overlay, I need another way to close it? 
+                                          Accordion usually closes by clicking the header again. Use toggle logic. */
+                    }
+                    .custom-dropdown-options {
+                        /* "Push content down" -> Not absolute */
+                        position: relative; 
+                        width: 100%;
+                        background-color: transparent; /* Or match background */
+                        border-bottom: 2px solid #0B1215;
+                        /* border: 1px solid #0B1215; Removing box border, making it look integrated? 
+                           Look at the image 2: It looks like a list appearing BELOW the line.
+                           The line "what are you looking for?" is the header.
+                           The options appear below.
+                           Image 2 shows:
+                           Header
+                           Option 1
+                           Option 2...
+                           Line (border-bottom) might be below the options?
+                           Or options satisfy the "form row" look.
+                           Let's standardise: 
+                           Header
+                           [Options List pushing content]
+                           [Next Field]
+                        */
+                        margin-top: 10px;
+                        margin-bottom: 20px;
+                        border: none; /* Clean look */
+                        overflow-y: hidden; /* For animation if we added it, but strictly distinct from absolute */
+                    }
+                    .custom-dropdown-option {
+                        padding: 12px 0; /* Align with text */
+                        font-family: 'Scandia', sans-serif;
+                        font-weight: 700;
+                        font-size: 20px;
+                        color: #0B1215;
+                        cursor: pointer;
+                        transition: color 0.2s;
+                    }
+                    .custom-dropdown-option:hover {
+                         color: #0033FF;
+                         background-color: transparent;
                     }
                     @media (max-width: 639px) {
                         .contacts-grid {
@@ -99,7 +157,7 @@ export default function SectionContacts() {
                     <p
                         style={{
                             fontFamily: 'Scandia, sans-serif',
-                            fontSize: '16px',
+                            fontSize: '18px',
                             fontWeight: 400,
                             color: '#0B1215',
                             lineHeight: 1.5,
@@ -146,20 +204,20 @@ export default function SectionContacts() {
                         contact
                     </h2>
 
-                    <form style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+                    <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                         {/* Name Row */}
                         <div className="form-row-name">
                             <div style={{ flex: 1 }}>
-                                <label style={{ display: 'block', fontFamily: 'Scandia, sans-serif', fontSize: '20px', fontWeight: 700, color: '#656565', marginBottom: '8px' }}>
+                                <label style={{ display: 'block', fontFamily: 'Scandia, sans-serif', fontSize: '20px', fontWeight: 700, color: '#656565', marginBottom: '4px' }}>
                                     first name*
                                 </label>
-                                <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none', borderRadius: 0 }} />
+                                <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '4px 0', outline: 'none', borderRadius: 0 }} />
                             </div>
                             <div style={{ flex: 1 }}>
                                 <label style={{ display: 'block', fontFamily: 'Scandia, sans-serif', fontSize: '20px', fontWeight: 700, color: '#656565', marginBottom: '8px' }}>
                                     last name*
                                 </label>
-                                <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none', borderRadius: 0 }} />
+                                <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '4px 0', outline: 'none', borderRadius: 0 }} />
                             </div>
                         </div>
 
@@ -168,22 +226,79 @@ export default function SectionContacts() {
                             <label style={{ display: 'block', fontFamily: 'Scandia, sans-serif', fontSize: '20px', fontWeight: 700, color: '#656565', marginBottom: '8px' }}>
                                 e-mail address*
                             </label>
-                            <input type="email" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none', borderRadius: 0 }} />
+                            <input type="email" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '4px 0', outline: 'none', borderRadius: 0 }} />
                         </div>
 
-                        {/* Looking For (Select) */}
+                        {/* Looking For (Custom Dropdown) */}
                         <div style={{ position: 'relative' }}>
                             <label style={{ display: 'block', fontFamily: 'Scandia, sans-serif', fontSize: '20px', fontWeight: 700, color: '#0B1215', marginBottom: '8px' }}>
                                 what are you looking for?*
                             </label>
-                            <div style={{ display: 'flex', alignItems: 'center', borderBottom: '2px solid #0B1215', paddingBottom: '8px' }}>
-                                <select defaultValue="" style={{ width: '100%', border: 'none', background: 'transparent', outline: 'none', appearance: 'none', fontFamily: 'Scandia, sans-serif', fontSize: '16px', color: '#0B1215', borderRadius: 0 }}>
-                                    <option value="" disabled>Select an option</option>
-                                    <option value="specialists">Specialists</option>
-                                    <option value="consulting">Consulting</option>
-                                </select>
-                                {/* Custom Arrow for select */}
-                                <img src={`${basePath}/images/icon-arrow-horizontal.svg`} style={{ transform: 'rotate(90deg)', width: '20px' }} alt="" />
+
+                            {/* Dropdown Container (Border moves with content) */}
+                            <div style={{
+                                borderBottom: '2px solid #0B1215',
+                                paddingBottom: '8px',
+                                transition: 'height 0.2s ease'
+                            }}>
+                                {/* Dropdown Trigger */}
+                                <div
+                                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-between',
+                                        cursor: 'pointer'
+                                    }}
+                                >
+                                    <span style={{
+                                        fontFamily: 'Scandia, sans-serif',
+                                        fontSize: '20px', /* Matches dropdown items */
+                                        fontWeight: 700,
+                                        color: selectedOption ? '#0B1215' : 'transparent', /* Hide placeholder text */
+                                        minHeight: '24px'
+                                    }}>
+                                        {selectedOption || '' /* Empty if nothing selected */}
+                                    </span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        <img
+                                            src={`${basePath}/images/icon-arrow-horizontal.svg`}
+                                            style={{
+                                                transform: dropdownOpen ? 'rotate(270deg)' : 'rotate(90deg)',
+                                                width: '20px',
+                                                transition: 'transform 0.2s ease'
+                                            }}
+                                            alt=""
+                                        />
+                                        <img
+                                            src={`${basePath}/images/Arrow 7.svg`}
+                                            style={{
+                                                width: '25px',
+                                                transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                                                transition: 'transform 0.2s ease'
+                                            }}
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Dropdown Menu (Accordion) */}
+                                {dropdownOpen && (
+                                    <div className="custom-dropdown-options">
+                                        {options.map((option) => (
+                                            <div
+                                                key={option}
+                                                className="custom-dropdown-option"
+                                                onClick={() => {
+                                                    setSelectedOption(option)
+                                                    setDropdownOpen(false)
+                                                }}
+                                            >
+                                                {option}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
 
@@ -192,21 +307,21 @@ export default function SectionContacts() {
                             <label style={{ display: 'block', fontFamily: 'Scandia, sans-serif', fontSize: '20px', fontWeight: 700, color: '#656565', marginBottom: '8px' }}>
                                 tell us about your context
                             </label>
-                            <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '8px 0', outline: 'none', borderRadius: 0 }} />
+                            <input type="text" style={{ width: '100%', border: 'none', borderBottom: '2px solid #0B1215', background: 'transparent', padding: '4px 0', outline: 'none', borderRadius: 0 }} />
                         </div>
 
                         {/* Footer / Privacy */}
                         <div style={{ marginTop: '40px' }}>
                             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '24px' }}>
                                 <input type="checkbox" id="privacy" style={{ marginTop: '4px', width: '16px', height: '16px', border: '1px solid #0B1215', borderRadius: 0, flexShrink: 0 }} />
-                                <label htmlFor="privacy" style={{ fontFamily: 'Scandia, sans-serif', fontSize: '16px', color: '#0B1215', lineHeight: 1.4 }}>
+                                <label htmlFor="privacy" style={{ fontFamily: 'Scandia, sans-serif', fontSize: '18px', color: '#0B1215', lineHeight: 1.4 }}>
                                     I agree to the processing of my personal data in accordance with the <a href={`${basePath}/privacy`} style={{ fontFamily: 'Scandia, sans-serif', fontWeight: 500, textDecoration: 'underline', color: 'inherit' }}>Privacy Policy.</a>
                                 </label>
                             </div>
 
                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '60px' }}>
                                 <img src={`${basePath}/images/Exclude.svg`} alt="info" style={{ width: '16px', height: '16px' }} />
-                                <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '16px', fontWeight: 500, textDecoration: 'underline', color: '#0B1215' }}>
+                                <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '18px', fontWeight: 500, textDecoration: 'underline', color: '#0B1215' }}>
                                     How we use your data
                                 </span>
                             </div>

@@ -25,21 +25,21 @@ export default function Section4() {
         className="text-on-path"
         src={`${basePath}/images/text-on-path-new-desktop.svg`}
         alt=""
-        style={{ top: '50px', zIndex: -1, left: '0', width: '100%' }}
+        style={{ top: '50px', zIndex: 0 /* Changed from -1 to 0 to sit above bg but below content? Or 10? User said white block covers it. If white block is Section 1, and Section 4 is Relative... actually, let's try 10 and pointer-events-none */, left: '0', width: '100%', pointerEvents: 'none' }}
       />
       <img
         id="text-on-path-1-mobile"
         className="text-on-path mobile-only"
         src={`${basePath}/images/text-on-path-0-mobile-new.svg`}
         alt=""
-        style={{ top: '30px', left: '0', width: '390px', maxWidth: '100%', zIndex: -1 }}
+        style={{ top: '30px', left: '0', width: '390px', maxWidth: '100%', zIndex: 20, pointerEvents: 'none' }}
       />
       <img
         id="text-on-path-2-mobile"
         className="text-on-path mobile-only"
         src={`${basePath}/images/text-on-path-0-mobile-new.svg`}
         alt=""
-        style={{ top: '320px', left: '0', width: '390px', maxWidth: '100%', zIndex: -1 }}
+        style={{ top: '320px', left: '0', width: '390px', maxWidth: '100%', zIndex: 20, pointerEvents: 'none' }}
       />
 
       {/* Bottom content - two columns */}
@@ -118,6 +118,7 @@ export default function Section4() {
             padding: '40px',
             maxWidth: '450px',
             flex: '1 1 300px',
+            marginTop: '80px',
           }}
         >
           <p

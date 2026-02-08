@@ -43,7 +43,7 @@ export default function Header() {
             fontWeight: 700,
             color: '#0033FF',
             textTransform: 'lowercase',
-            marginLeft: '48px',
+            marginLeft: '100px', /* Increased from 48px */
             whiteSpace: 'nowrap',
           }}
         >
@@ -82,21 +82,11 @@ export default function Header() {
         className="book-call-btn hidden md:flex"
       >
         Book a Call
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M4 10H16M16 10L11 5M16 10L11 15"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <img
+          src={`${basePath}/images/Arrow 6.svg`}
+          alt=""
+          style={{ width: '20px', height: '20px' }}
+        />
       </button>
 
       {/* Burger Menu */}
@@ -111,9 +101,10 @@ export default function Header() {
           height: '36px',
           background: 'none',
           border: 'none',
-          cursor: 'default',
+          cursor: 'pointer',
           padding: 0,
         }}
+        onClick={toggleMobileMenu}
         aria-label="Toggle menu"
       >
         <span style={{ width: '40px', height: '3px', backgroundColor: '#0033FF', borderRadius: '2px' }}></span>

@@ -30,6 +30,7 @@ export default function ContactsSidebar() {
           whiteSpace: 'nowrap',
           opacity: sidebarDesktopOn ? 1 : 0,
           transition: 'opacity 0.3s ease',
+          padding: '20px', /* Added padding for text */
           // fontFamily: "'Scandia', sans-serif",
           fontSize: '18px',
           fontWeight: 700,
@@ -67,13 +68,13 @@ export default function ContactsSidebar() {
           </div>
         </div>
 
-        <button id="contact-sidebar-toggle" onClick={toggleSidebarDesktop}>
+        <button id="contact-sidebar-toggle" onClick={toggleSidebarDesktop} style={{ padding: '12px 0' /* Reduced padding */ }}>
           <span
             style={{
               writingMode: 'vertical-rl',
               textOrientation: 'mixed',
               // fontFamily: "'Scandia'",
-              fontSize: '24px',
+              fontSize: '16px', /* Reduced from 24px */
               fontWeight: 700,
               letterSpacing: '0.15em',
               color: '#fff',

@@ -3950,7 +3950,7 @@ body.figma-visible {
   position: fixed;
   left: 0;
   top: 26vw;
-  padding: 16px 80px 16px 28px;
+  padding: 0;
   font-weight: 700;
   line-height: 1.8;
   white-space: nowrap;
@@ -3960,10 +3960,16 @@ body.figma-visible {
   transition: all 120ms ease-in;
   transform-origin: top right;
   transform: translateX(calc(-100% + 65px));
-  min-height: 250px;
+  min-height: 25px;
+  height: auto;
+  /* Allow expansion */
   display: flex;
-  flex-direction: column;
-  justify-content: center
+  flex-direction: row;
+  /* Side-by-side layout (Contacts | Button) */
+  justify-content: flex-end;
+  /* Align content to right */
+  align-items: stretch;
+  /* Stretch children vertically */
 }
 
 @media screen and (max-width: 639px) {
@@ -3972,9 +3978,7 @@ body.figma-visible {
   }
 }
 
-#contact-sidebar.hover {
-  transform: translateX(calc(-100% + 65px + 10px))
-}
+/* Removed hover effect */
 
 #contact-sidebar.visible {
   transform: translateX(0)
@@ -4006,14 +4010,17 @@ body.figma-visible {
 }
 
 #contact-sidebar #contact-sidebar-toggle {
-  position: absolute;
+  position: relative;
+  /* Relative positioning */
   width: 65px;
-  height: 250px;
+  height: auto;
+  /* Fit text */
+  min-height: 25px;
+  /* Minimum 25px */
   display: flex;
   align-items: center;
   justify-content: center;
-  right: 0;
-  top: 0;
+  /* Removed absolute offsets */
   font-size: 18px;
   letter-spacing: .2;
   writing-mode: vertical-rl;

@@ -4,14 +4,14 @@ import React from 'react'
 import { basePath } from '@/lib/basePath'
 
 const LOGOS = [
-    'logos/logos/LM logo.png',
-    'logos/logos/CL logo.png',
-    'logos/logos/JM logo.png',
-    'logos/logos/KL logo.png',
-    'logos/logos/AV logo.png',
-    'logos/logos/EL logo.png',
-    // 'logos/logos/MAC logo.png' // Left out to match screenshot count (6 logos) or include if user wants all. User said "там лежат все фотки", listing all 7.
-    'logos/logos/MAC logo.png'
+    'logos/logos/LM%20logo.png',
+    'logos/logos/CL%20logo.png',
+    'logos/logos/JM%20logo.png',
+    'logos/logos/KL%20logo.png',
+    'logos/logos/AV%20logo.png',
+    'logos/logos/EL%20logo.png',
+    // 'logos/logos/MAC%20logo.png' // Left out to match screenshot count (6 logos) or include if user wants all. User said "там лежат все фотки", listing all 7.
+    'logos/logos/MAC%20logo.png'
 ]
 
 export default function SectionWorkWith() {

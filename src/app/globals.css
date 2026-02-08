@@ -39,11 +39,15 @@
     margin: 0 auto;
     max-width: 1600px;
     background-color: #F2F0EF;
-    font-family: 'Scandia', sans-serif; /* Explicitly set base font */
+    font-family: 'Scandia', sans-serif;
+    /* Explicitly set base font */
   }
 
   /* Ensure form elements inherit or use the correct font */
-  button, input, textarea, select {
+  button,
+  input,
+  textarea,
+  select {
     font-family: inherit;
   }
 
@@ -345,13 +349,26 @@
     width: fit-content;
   }
 
-  #section-4 .offset-line-2 {
-    transform: translateX(min(34vw, 490px));
+  /* Assemble - Left Aligned */
+  #section-4 .offset-line-1 {
+    margin-right: auto;
+    margin-left: 0;
   }
 
+  /* Your Team - Right Aligned (Changed from Center) */
+  #section-4 .offset-line-2 {
+    margin-left: auto;
+    margin-right: 0;
+    transform: none !important;
+  }
+
+  /* With Us - Left Aligned */
   #section-4 .offset-line-3 {
-    transform: translateX(min(9vw, 130px));
-    z-index: 1;
+    margin-right: auto;
+    margin-left: 0;
+    transform: none !important;
+    z-index: 10;
+    /* Ensure it's above other elements if needed */
   }
 }
 

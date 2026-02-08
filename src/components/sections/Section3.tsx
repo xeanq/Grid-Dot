@@ -35,13 +35,13 @@ export default function Section3() {
               textAlign: 'left',
             }}
           >
-            How It Works —<br />
-            Simple & Transparent
+            <span style={{ whiteSpace: 'nowrap' }}>How It Works — Simple</span><br />
+            & Transparent
           </h2>
         </div>
 
         {/* Col 2: Gray Box */}
-        <div style={{ gridColumn: '2 / 3' }}>
+        <div style={{ gridColumn: '2 / 3', position: 'relative', top: '120px' }}>
           <div
             style={{
               backgroundColor: '#F8F8F8',
@@ -68,10 +68,10 @@ export default function Section3() {
 
         {/* === ROW 2 === */}
         {/* Col 1: Step [0.1] */}
-        <div style={{ gridColumn: '1 / 2' }}>
+        <div style={{ gridColumn: '1 / 2', }}>
           <div style={{ marginBottom: '16px' }}>
             <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0033FF', marginRight: '16px' }}>
-              [0.1]
+              [1.0]
             </span>
             <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0B1215' }}>
               we start with context
@@ -90,7 +90,7 @@ export default function Section3() {
         <div style={{ gridColumn: '1 / 2' }}>
           <div style={{ marginBottom: '16px' }}>
             <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0033FF', marginRight: '16px' }}>
-              [0.2]
+              [2.0]
             </span>
             <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0B1215' }}>
               we reach out — not outwards
@@ -106,7 +106,7 @@ export default function Section3() {
         <div style={{ gridColumn: '2 / 3' }}>
           <div style={{ marginBottom: '16px' }}>
             <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0033FF', marginRight: '16px' }}>
-              [0.4]
+              [4.0]
             </span>
             <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0B1215' }}>
               we curate, not filter
@@ -123,7 +123,7 @@ export default function Section3() {
         <div style={{ gridColumn: '1 / 2' }}>
           <div style={{ marginBottom: '16px' }}>
             <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0033FF', marginRight: '16px' }}>
-              [0.3]
+              [3.0]
             </span>
             <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0B1215' }}>
               we stay involved
@@ -139,7 +139,7 @@ export default function Section3() {
         <div style={{ gridColumn: '2 / 3' }}>
           <div style={{ marginBottom: '16px' }}>
             <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0033FF', marginRight: '16px' }}>
-              [0.5]
+              [5.0]
             </span>
             <span style={{ fontFamily: 'Scandia, sans-serif', fontSize: '24px', fontWeight: 700, color: '#0B1215' }}>
               we adjust and improve
