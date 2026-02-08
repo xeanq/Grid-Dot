@@ -23,30 +23,49 @@ export default function ContactsSidebar() {
         onMouseEnter={() => setSidebarDesktopHover(true)}
         onMouseLeave={() => setSidebarDesktopHover(false)}
       >
-        {CONTACTS.email && (
-          <p>
-            <a href={`mailto:${CONTACTS.email}`} className="link">{CONTACTS.email}</a>
-          </p>
-        )}
-        {CONTACTS.phone && (
-          <p>
-            <a href={`tel:${CONTACTS.phone}`} className="link">{CONTACTS.phone}</a>
-          </p>
-        )}
-        {CONTACTS.telegram && (
-          <p>
-            <a href={`https://t.me/${CONTACTS.telegram.replace('@', '')}`} className="link" target="_blank" rel="noopener noreferrer">
-              Telegram
-            </a>
-          </p>
-        )}
-        {CONTACTS.whatsapp && (
-          <p>
-            <a href={`https://wa.me/${CONTACTS.whatsapp}`} className="link" target="_blank" rel="noopener noreferrer">
+        <div style={{
+          display: sidebarDesktopOn ? 'flex' : 'none',
+          flexDirection: 'column',
+          gap: '12px',
+          whiteSpace: 'nowrap',
+          opacity: sidebarDesktopOn ? 1 : 0,
+          transition: 'opacity 0.3s ease',
+          fontFamily: "'Scandia', sans-serif",
+          fontSize: '18px',
+          fontWeight: 700,
+          color: '#FFFFFF'
+        }}>
+          {/* Line 1: Messengers */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span>You can get in touch with us by</span>
+            <a href={`https://wa.me/${CONTACTS.whatsapp}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#FFF', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+              <img src={`${basePath}/images/icon-whatsapp.svg`} alt="" style={{ width: '20px', height: '20px', filter: 'brightness(0) invert(1)' }} />
               WhatsApp
             </a>
-          </p>
-        )}
+            <a href={`https://t.me/${CONTACTS.telegram}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#FFF', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+              <img src={`${basePath}/images/icon-telegram.svg`} alt="" style={{ width: '20px', height: '20px', filter: 'brightness(0) invert(1)' }} />
+              Telegram
+            </a>
+          </div>
+
+          {/* Line 2: Email */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span>Send a message to our email</span>
+            <a href={`mailto:${CONTACTS.email}`} style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#FFF', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+              <img src={`${basePath}/images/icon-email.svg`} alt="" style={{ width: '20px', height: '20px', filter: 'brightness(0) invert(1)' }} />
+              {CONTACTS.email}
+            </a>
+          </div>
+
+          {/* Line 3: Phone */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span>or give us a call at</span>
+            <a href={`tel:${CONTACTS.phone}`} style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#FFF', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+              <img src={`${basePath}/images/icon-phone-2.svg`} alt="" style={{ width: '20px', height: '20px', filter: 'brightness(0) invert(1)' }} />
+              {CONTACTS.phone}
+            </a>
+          </div>
+        </div>
 
         <button id="contact-sidebar-toggle" onClick={toggleSidebarDesktop}>
           <span

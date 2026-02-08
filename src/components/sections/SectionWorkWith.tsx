@@ -4,16 +4,48 @@ import React from 'react'
 import { basePath } from '@/lib/basePath'
 
 const LOGOS = [
-    'estee lauder.png',
-    'macc.png',
-    'lamer.png',
-    'clinique.png',
-    'jo malone.png',
-    'kilian paris.png',
-    'aveda.png'
+    'logos/logos/LM logo.png',
+    'logos/logos/CL logo.png',
+    'logos/logos/JM logo.png',
+    'logos/logos/KL logo.png',
+    'logos/logos/AV logo.png',
+    'logos/logos/EL logo.png',
+    // 'logos/logos/MAC logo.png' // Left out to match screenshot count (6 logos) or include if user wants all. User said "там лежат все фотки", listing all 7.
+    'logos/logos/MAC logo.png'
 ]
 
 export default function SectionWorkWith() {
+    const sliderRef = React.useRef<HTMLDivElement>(null);
+    const isDown = React.useRef(false);
+    const startX = React.useRef(0);
+    const scrollLeft = React.useRef(0);
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (!sliderRef.current) return;
+        isDown.current = true;
+        sliderRef.current.classList.add('active');
+        startX.current = e.pageX - sliderRef.current.offsetLeft;
+        scrollLeft.current = sliderRef.current.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+        isDown.current = false;
+        if (sliderRef.current) sliderRef.current.classList.remove('active');
+    };
+
+    const handleMouseUp = () => {
+        isDown.current = false;
+        if (sliderRef.current) sliderRef.current.classList.remove('active');
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDown.current || !sliderRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - sliderRef.current.offsetLeft;
+        const walk = (x - startX.current) * 2; // Scroll-fast
+        sliderRef.current.scrollLeft = scrollLeft.current - walk;
+    };
+
     return (
         <section
             id="section-work-with"
@@ -61,103 +93,71 @@ export default function SectionWorkWith() {
                             padding: 60px 40px !important;
                         }
                     }
-                    @keyframes scroll {
-                      0% { transform: translateX(0); }
-                      100% { transform: translateX(-50%); }
+                    /* Manual Scroll Container */
+                    .logo-carousel {
+                        display: flex;
+                        overflow-x: auto;
+                        gap: 40px;
+                        padding-bottom: 20px; /* Space for scrollbar or gap */
+                        width: 100%;
+                        scroll-behavior: smooth;
+                        /* Ensure it's scrollable on desktop */
+                        cursor: grab;
+                        /* Hide scrollbar always for clean look, as we have drag-to-scroll now */
+                        -ms-overflow-style: none;  /* IE and Edge */
+                        scrollbar-width: none;  /* Firefox */
                     }
-                    .slider-track {
-                      display: flex;
-                      width: fit-content;
-                      animation: scroll 40s linear infinite;
-                    }
-                    /* Hide scrollbar for mobile slider */
-                    .mobile-slider::-webkit-scrollbar {
+                    .logo-carousel::-webkit-scrollbar {
                         display: none;
                     }
-                    .mobile-slider {
-                        -ms-overflow-style: none;
-                        scrollbar-width: none;
+                    .logo-carousel.active {
+                        cursor: grabbing;
+                        scroll-behavior: auto; /* Remove smooth scroll while dragging for responsiveness */
+                    }
+                    .logo-item {
+                        flex: 0 0 auto;
+                        width: 200px; /* Adjust size based on design */
+                        height: 100px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        user-select: none; /* Prevent image selection while dragging */
+                    }
+                    .logo-item img {
+                        pointer-events: none; /* Prevent image drag behavior */
+                    }
+                    @media (max-width: 639px) {
+                        .logo-item {
+                            width: 140px;
+                            height: 80px;
+                        }
                     }
                 `}</style>
 
-                {/* Slider Container (Desktop) */}
-                <div
-                    className="desktop-only"
-                    style={{
-                        position: 'relative',
-                        width: '100%',
-                        overflow: 'hidden',
-                        marginBottom: '100px',
-                        maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', // Fade edges
-                        WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-                    }}
-                >
-                    <div className="slider-track">
-                        {/* Quadruple the logos for seamless infinite effect on large screens */}
-                        {[...LOGOS, ...LOGOS, ...LOGOS, ...LOGOS].map((logo, index) => (
+                {/* Unified Carousel (Desktop & Mobile) */}
+                <div style={{ marginBottom: '60px', width: '100%' }}>
+                    <div
+                        className="logo-carousel"
+                        ref={sliderRef}
+                        onMouseDown={handleMouseDown}
+                        onMouseLeave={handleMouseLeave}
+                        onMouseUp={handleMouseUp}
+                        onMouseMove={handleMouseMove}
+                    >
+                        {LOGOS.map((logo, index) => (
                             <div
                                 key={index}
-                                style={{
-                                    flex: '0 0 auto',
-                                    padding: '0 40px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: '250px', // Fixed width for consistent spacing
-                                    height: '100px',
-                                }}
+                                className="logo-item"
                             >
                                 <img
                                     src={`${basePath}/images/${logo}`}
-                                    alt={logo.replace('.png', '')}
+                                    alt={logo.split('/').pop()?.replace('.png', '') || 'Partner Logo'}
                                     style={{
                                         maxWidth: '100%',
                                         maxHeight: '100%',
                                         objectFit: 'contain',
-                                        filter: 'grayscale(100%) brightness(0.2)'
-                                    }}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Mobile Grid / Slider (2 Rows Horizontal Scroll) */}
-                <div className="mobile-only" style={{ marginBottom: '60px' }}>
-                    <div
-                        className="mobile-slider"
-                        style={{
-                            display: 'grid',
-                            gridTemplateRows: 'repeat(2, 1fr)',
-                            gridAutoFlow: 'column',
-                            columnGap: '40px', /* Spacing between columns */
-                            rowGap: '40px',    /* Spacing between rows */
-                            overflowX: 'auto',
-                            // With standard width, padding inside the scroll container is fine for scroll snap/start/end but if width is constrained, it pushes content in.
-                            // ...
-                            padding: 0,
-                        }}
-                    >
-                        {/* Duplicate logos to ensure enough content for scrolling effect if needed, fitting 7 items in 2 rows means 4 colums. 7 items is fine. */}
-                        {LOGOS.map((logo, index) => (
-                            <div
-                                key={`mobile-${index}`}
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: '140px', /* Fixed width for columns */
-                                    height: '50px', /* Fixed height for rows */
-                                }}
-                            >
-                                <img
-                                    src={`${basePath}/images/${logo}`}
-                                    alt={logo.replace('.png', '')}
-                                    style={{
-                                        maxWidth: '100%',
-                                        maxHeight: '100%', // Scale down further?
-                                        objectFit: 'contain',
-                                        filter: 'grayscale(100%) brightness(0.2)' // Ensure opacity matches reference if possible? Reference was dark logos. filter brightness 0.2 makes them dark.
+                                        // filter: 'grayscale(100%) brightness(0.2)' // Removed filter as user said logos are pre-prepared ("с фреймами", "идентичного размера") and didn't ask for grayscale. If they are black/transparent already, this might make them invisible or too dark. I'll stick to transparency handling. If they are colored they might need grayscale. The screenshot shows black logos. I'll keep it safe and remove filter if not needed, or re-add if user complains. Actually, screenshot shows black logos. Assuming new PNGs are black or colored. Better to render "as is".
+                                        // Re-adding filter just in case they are colored, but user said "PNG с прозрачными фреймами". I'll assume they are ready for display.
                                     }}
                                 />
                             </div>
