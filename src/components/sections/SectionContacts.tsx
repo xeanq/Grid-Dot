@@ -8,6 +8,7 @@ export default function SectionContacts() {
     const { scrollTo } = useApp()
     const [dropdownOpen, setDropdownOpen] = React.useState(false)
     const [selectedOption, setSelectedOption] = React.useState('')
+    const [privacyAccepted, setPrivacyAccepted] = React.useState(false)
 
     const options = [
         'extended team support',
@@ -121,6 +122,20 @@ export default function SectionContacts() {
                             gap: 40px !important;
                         }
                     }
+
+                    /* Conversation Button Hover */
+                    .start-conversation-btn:hover .conversation-arrow {
+                        transform: translate(4px, -4px);
+                    }
+
+                    /* Book a Call Contacts Button Hover */
+                    .book-call-btn-contacts:hover {
+                        background-color: #0033FF !important;
+                        color: #FFFFFF !important;
+                    }
+                    .book-call-btn-contacts:hover .book-call-arrow-contacts {
+                        filter: brightness(0) invert(1);
+                    }
                 `}</style>
 
                 {/* Left Column: Info & CTA */}
@@ -157,7 +172,7 @@ export default function SectionContacts() {
                     <p
                         style={{
                             fontFamily: 'Scandia, sans-serif',
-                            fontSize: '18px',
+                            fontSize: '16px',
                             fontWeight: 400,
                             color: '#0B1215',
                             lineHeight: 1.5,
@@ -171,10 +186,11 @@ export default function SectionContacts() {
                     </p>
 
                     <button
+                        className="book-call-btn-contacts"
                         style={{
                             display: 'inline-flex',
                             alignItems: 'center',
-                            justifyContent: 'space-between', /* Changed from center to space-between for left-aligned text */
+                            justifyContent: 'space-between',
                             padding: '16px 32px',
                             backgroundColor: 'transparent',
                             border: '2px solid #0033FF',
@@ -184,12 +200,23 @@ export default function SectionContacts() {
                             fontWeight: 700,
                             cursor: 'pointer',
                             marginTop: '40px',
-                            width: '70%', /* Mobile full width often looks better, but let's see. Left align desktop, full mobile? */
+                            width: '70%',
                             maxWidth: '100%',
+                            transition: 'all 0.2s ease',
                         }}
                     >
                         Book a Call
-                        <img src={`${basePath}/images/Arrow 6.svg`} alt="arrow" style={{ marginLeft: '12px', width: '14px', height: '14px' }} />
+                        <img
+                            src={`${basePath}/images/Arrow 6.svg`}
+                            alt="arrow"
+                            className="book-call-arrow-contacts"
+                            style={{
+                                marginLeft: '12px',
+                                width: '14px',
+                                height: '14px',
+                                transition: 'filter 0.2s ease'
+                            }}
+                        />
                     </button>
                     {/* Note: Button width on desktop was inline-flex. On mobile full width might be better. 
                         Let's keep it consistent: inline-flex desktop, full width mobile? 
@@ -231,10 +258,6 @@ export default function SectionContacts() {
 
                         {/* Looking For (Custom Dropdown) */}
                         <div style={{ position: 'relative' }}>
-                            <label style={{ display: 'block', fontFamily: 'Scandia, sans-serif', fontSize: '20px', fontWeight: 700, color: '#0B1215', marginBottom: '8px' }}>
-                                what are you looking for?*
-                            </label>
-
                             {/* Dropdown Container (Border moves with content) */}
                             <div style={{
                                 borderBottom: '2px solid #0B1215',
@@ -253,23 +276,14 @@ export default function SectionContacts() {
                                 >
                                     <span style={{
                                         fontFamily: 'Scandia, sans-serif',
-                                        fontSize: '20px', /* Matches dropdown items */
+                                        fontSize: '20px',
                                         fontWeight: 700,
-                                        color: selectedOption ? '#0B1215' : 'transparent', /* Hide placeholder text */
+                                        color: '#0B1215',
                                         minHeight: '24px'
                                     }}>
-                                        {selectedOption || '' /* Empty if nothing selected */}
+                                        {selectedOption || 'what are you looking for?*'}
                                     </span>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        <img
-                                            src={`${basePath}/images/icon-arrow-horizontal.svg`}
-                                            style={{
-                                                transform: dropdownOpen ? 'rotate(270deg)' : 'rotate(90deg)',
-                                                width: '20px',
-                                                transition: 'transform 0.2s ease'
-                                            }}
-                                            alt=""
-                                        />
                                         <img
                                             src={`${basePath}/images/Arrow 7.svg`}
                                             style={{
@@ -313,9 +327,26 @@ export default function SectionContacts() {
                         {/* Footer / Privacy */}
                         <div style={{ marginTop: '40px' }}>
                             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '24px' }}>
-                                <input type="checkbox" id="privacy" style={{ marginTop: '4px', width: '16px', height: '16px', border: '1px solid #0B1215', borderRadius: 0, flexShrink: 0 }} />
-                                <label htmlFor="privacy" style={{ fontFamily: 'Scandia, sans-serif', fontSize: '18px', color: '#0B1215', lineHeight: 1.4 }}>
-                                    I agree to the processing of my personal data in accordance with the <a href={`${basePath}/privacy`} style={{ fontFamily: 'Scandia, sans-serif', fontWeight: 500, textDecoration: 'underline', color: 'inherit' }}>Privacy Policy.</a>
+                                <input
+                                    type="checkbox"
+                                    id="privacy"
+                                    checked={privacyAccepted}
+                                    onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                                    className="privacy-checkbox"
+                                    style={{
+                                        marginTop: '4px',
+                                        width: '16px',
+                                        height: '16px',
+                                        border: '1px solid #0B1215',
+                                        borderRadius: 0,
+                                        flexShrink: 0,
+                                        cursor: 'pointer',
+                                        appearance: 'auto', /* Ensure native OS style */
+                                        accentColor: '#0B1215' /* Black checkmark background */
+                                    }}
+                                />
+                                <label htmlFor="privacy" style={{ fontFamily: 'Scandia, sans-serif', fontSize: '18px', color: '#0B1215', lineHeight: 1.4, cursor: 'pointer' }}>
+                                    I agree to the processing of my personal data in accordance with the <a href={`${basePath}/privacy`} target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'Scandia, sans-serif', fontWeight: 500, textDecoration: 'underline', color: 'inherit' }}>Privacy Policy.</a>
                                 </label>
                             </div>
 
@@ -328,6 +359,7 @@ export default function SectionContacts() {
 
                             <button
                                 type="submit"
+                                className="start-conversation-btn"
                                 style={{
                                     display: 'inline-flex',
                                     alignItems: 'center',
@@ -345,8 +377,18 @@ export default function SectionContacts() {
                                 }}
                             >
                                 Start a Conversation
-                                <img src={`${basePath}/images/Arrow 6.svg`} alt="arrow" style={{ marginLeft: '12px', width: '20px' }} />
+                                <img
+                                    src={`${basePath}/images/Arrow 6.svg`}
+                                    alt="arrow"
+                                    className="conversation-arrow"
+                                    style={{
+                                        marginLeft: '12px',
+                                        width: '20px',
+                                        transition: 'transform 0.2s ease'
+                                    }}
+                                />
                             </button>
+
                         </div>
                     </form>
                 </div>

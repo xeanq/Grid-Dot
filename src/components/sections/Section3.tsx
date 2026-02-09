@@ -26,8 +26,9 @@ export default function Section3() {
         <div style={{ gridColumn: '1 / 2' }}>
           <h2
             style={{
-              fontFamily: 'Scandia, sans-serif',
+              fontFamily: 'var(--font-scandia), sans-serif',
               fontSize: '48px',
+              fontStyle: 'normal',
               fontWeight: 700,
               color: '#0B1215',
               lineHeight: 1.1,
@@ -54,6 +55,7 @@ export default function Section3() {
                 fontFamily: "'Overpass Mono', monospace",
                 fontSize: '16px',
                 fontWeight: 400,
+                letterSpacing: '0em',
                 color: '#0B1215',
                 lineHeight: 1.6,
                 margin: 0,
@@ -167,7 +169,7 @@ export default function Section3() {
               fontSize: '44px',
               fontWeight: 700,
               color: '#0B1215',
-              lineHeight: 1.2,
+              lineHeight: 1.5,
               margin: 0,
               marginLeft: '-320px',
             }}
@@ -208,6 +210,7 @@ export default function Section3() {
               fontFamily: "'Overpass Mono', monospace",
               fontSize: '16px',
               fontWeight: 400,
+              letterSpacing: '0em',
               color: '#0033FF',
               lineHeight: 1.6,
               margin: 0,
@@ -288,7 +291,7 @@ export default function Section3() {
             </span>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {['clarity at every step', 'fewer introductions,\nbetter matches', 'specialists who work\nas part of your team'].map((text, i) => (
               <div key={i} style={{ backgroundColor: '#9AC2E4', padding: '0 8px', width: 'fit-content' }}>
                 <h3

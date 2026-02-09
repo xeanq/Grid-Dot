@@ -111,7 +111,8 @@ export default function SectionCommitment() {
                             style={{
                                 fontFamily: "'Overpass Mono', monospace",
                                 fontSize: '24px',
-                                fontWeight: 700,
+                                fontWeight: 600,
+                                letterSpacing: '0.02em',
                                 color: '#FF8000',
                                 width: '300px', // Fixed width for alignment
                                 textAlign: 'right',
@@ -146,7 +147,8 @@ export default function SectionCommitment() {
                                 color: '#0033FF',
                                 width: '300px', // Fixed width for alignment
                                 textAlign: 'right',
-                                fontWeight: 700,
+                                fontWeight: 600,
+                                letterSpacing: '0.02em',
                             }}
                         >
                             extended expertise

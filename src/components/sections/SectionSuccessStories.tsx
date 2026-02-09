@@ -495,6 +495,7 @@ export default function SectionSuccessStories() {
                 <div style={{ marginTop: '60px' }}>
                     <button
                         onClick={() => scrollTo('#section-contact', 'start')}
+                        className="request-case-study-btn"
                         style={{
                             display: 'inline-flex',
                             alignItems: 'center',
@@ -512,12 +513,25 @@ export default function SectionSuccessStories() {
                     >
                         Request a Case Study
                         {/* Arrow Icon */}
-                        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '12px' }}>
+                        <svg
+                            className="case-study-arrow"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style={{ marginLeft: '12px', transition: 'transform 0.2s ease' }}
+                        >
                             <path d="M1 13L13 1M13 1H4M13 1V10" stroke="#0033FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </button>
                 </div>
             </div>
+            <style jsx>{`
+                .request-case-study-btn:hover .case-study-arrow {
+                    transform: translate(4px, -4px);
+                }
+            `}</style>
         </section>
     )
 }

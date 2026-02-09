@@ -56,6 +56,7 @@ export default function Section1() {
                 fontFamily: "'Overpass Mono', monospace",
                 fontSize: '16px',
                 fontWeight: 400,
+                letterSpacing: '0em',
                 color: '#0B1215',
                 lineHeight: 1.6,
                 margin: 0,

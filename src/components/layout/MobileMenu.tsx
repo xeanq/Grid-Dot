@@ -38,7 +38,7 @@ export default function MobileMenu() {
         </nav>
 
         {/* Contact Section */}
-        <div className="mobile-menu-contact">
+        <div className="mobile-menu-contact" style={{ paddingTop: 'clamp(40px, 10vw, 100px)' }}>
           <div className="get-in-touch">Get in touch</div>
           <div className="contact-icons">
             {CONTACTS.whatsapp && (
@@ -78,12 +78,14 @@ export default function MobileMenu() {
           position: fixed;
           top: 0;
           right: 0;
-          height: 60%;
+          max-height: 60vh;
+          min-height: min-content;
           background-color: #9AC2E4; /* Blue background */
           z-index: 1001;
           display: flex;
           flex-direction: column;
           box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+          overflow-y: auto;
           
           /* Desktop Styles */
           width: 540px;
@@ -118,16 +120,25 @@ export default function MobileMenu() {
 
         .mobile-menu-nav a {
           font-family: 'Overpass Mono', monospace;
-          font-weight: 700; /* Bold */
+          font-weight: 600; /* SemiBold */
+          letter-spacing: 0.02em;
           font-size: 24px;
           color: #0B1215; 
           text-decoration: none;
           text-transform: lowercase; 
           line-height: 1.2;
+          transition: color 150ms ease, text-decoration 150ms ease;
+        }
+
+        .mobile-menu-nav a:hover {
+          color: #0033FF;
+          text-decoration: underline;
+          text-underline-offset: 4px;
         }
 
         .mobile-menu-contact {
           margin-top: auto; /* Push to bottom */
+          padding-top: 100px; /* Space from last link - desktop */
           display: flex;
           flex-direction: column;
           gap: 20px;
@@ -135,7 +146,8 @@ export default function MobileMenu() {
 
         .get-in-touch {
           font-family: 'Overpass Mono', monospace;
-          font-weight: 700;
+          font-weight: 600;
+          letter-spacing: 0.02em;
           font-size: 24px;
           color: #0033FF; /* Specific blue color */
         }
@@ -180,10 +192,14 @@ export default function MobileMenu() {
               gap: 24px;
           }
 
-
           
           .mobile-menu-nav a {
               font-size: 20px; 
+          }
+
+          .mobile-menu-contact {
+              margin-top: 0 !important;
+              padding-top: 40px !important; /* Smaller spacing on mobile */
           }
         }
       `}</style>

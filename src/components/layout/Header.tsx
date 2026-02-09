@@ -34,20 +34,7 @@ export default function Header() {
           />
         </a>
 
-        {/* Tagline */}
-        <span
-          className="header-tagline"
-          style={{
-            fontFamily: 'var(--font-overpass), monospace',
-            fontSize: '24px',
-            fontWeight: 600, // SemiBold
-            letterSpacing: '0.02em', // 2%
-            color: '#0033FF',
-            textTransform: 'lowercase',
-            marginLeft: '100px', /* Increased from 48px */
-            whiteSpace: 'nowrap',
-          }}
-        >
+        <span className="header-tagline">
           — extended expertise
         </span>
       </div>
@@ -55,40 +42,70 @@ export default function Header() {
       {/* Book a Call Button - Desktop */}
       <button
         onClick={() => scrollTo('#section-7', '25%')}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '10px',
-          padding: '10px 24px',
-          marginRight: '48px',
-          backgroundColor: 'transparent',
-          border: '2px solid #0033FF',
-          borderRadius: '0',
-          color: '#0033FF',
-          fontFamily: 'Scandia, sans-serif',
-          fontSize: '20px',
-          fontWeight: 700,
-          cursor: 'pointer',
-          whiteSpace: 'nowrap',
-          transition: 'all 150ms ease',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = '#0033FF';
-          e.currentTarget.style.color = '#FFFFFF';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'transparent';
-          e.currentTarget.style.color = '#0033FF';
-        }}
         className="book-call-btn hidden md:flex"
       >
         Book a Call
         <img
           src={`${basePath}/images/Arrow 6.svg`}
           alt=""
-          style={{ width: '20px', height: '20px' }}
+          className="book-call-arrow"
         />
       </button>
+
+      <style jsx>{`
+        /* Tagline Styles */
+        .header-tagline {
+            font-family: var(--font-overpass), monospace;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #0033FF;
+            text-transform: lowercase;
+            margin-left: 100px;
+            white-space: nowrap;
+            transition: text-decoration 0.2s ease;
+            cursor: default;
+        }
+        .header-tagline:hover {
+            text-decoration: underline;
+            text-decoration-color: #0033FF;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        /* Button Styles */
+        .book-call-btn {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 24px;
+          margin-right: 48px;
+          background-color: transparent;
+          border: 2px solid #0033FF;
+          border-radius: 0;
+          color: #0033FF;
+          font-family: Scandia, sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          cursor: pointer;
+          white-space: nowrap;
+          transition: all 150ms ease;
+        }
+        .book-call-btn:hover {
+          background-color: #0033FF;
+          color: #FFFFFF;
+        }
+        
+        /* Arrow Styles */
+        .book-call-arrow {
+            width: 20px; 
+            height: 20px; 
+            transition: filter 150ms ease;
+        }
+        .book-call-btn:hover .book-call-arrow {
+          filter: brightness(0) invert(1);
+        }
+      `}</style>
 
       {/* Burger Menu */}
       <button

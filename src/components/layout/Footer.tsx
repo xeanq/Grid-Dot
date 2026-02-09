@@ -50,6 +50,11 @@ export default function Footer() {
             .mobile-footer-link {
               text-decoration: none;
             }
+            /* Hover effects */
+            a:hover {
+                text-decoration: underline !important;
+                text-underline-offset: 4px;
+            }
           }
         `}</style>
 
@@ -73,47 +78,47 @@ export default function Footer() {
         <div className="desktop-footer-links">
           {/* Row 1 */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-            <a href="#section-1" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>
+            <a href="#section-1" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none' }}>
               Why Extended Expertise
             </a>
-            <span style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textAlign: 'right' }}>
+            <span style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textAlign: 'right' }}>
               Grid & Dot ©️
             </span>
           </div>
 
           {/* Row 2 */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-            <a href="#section-2" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>
+            <a href="#section-2" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none' }}>
               What We Offer — Our Expertise
             </a>
-            <a href="mailto:engagement@gridanddot.com" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none', textAlign: 'right' }}>
+            <a href="mailto:engagement@gridanddot.com" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none', textAlign: 'right' }}>
               engagement@gridanddot.com
             </a>
           </div>
 
           {/* Row 3 */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-            <a href="#section-3" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>
+            <a href="#section-3" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none' }}>
               How It Works — Simple & Transparent
             </a>
-            <span style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textAlign: 'right' }}>
+            <span style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textAlign: 'right' }}>
               Mayfair, London
             </span>
           </div>
 
           {/* Row 4 */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-            <a href="#section-success-stories" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>
+            <a href="#section-success-stories" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none' }}>
               Success Stories — Case Highlights
             </a>
-            <a href={`${basePath}/privacy`} style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'underline', textUnderlineOffset: '4px', textAlign: 'right' }}>
+            <a href={`${basePath}/privacy`} style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'underline', textUnderlineOffset: '4px', textAlign: 'right' }}>
               Privacy Policy
             </a>
           </div>
 
           {/* Row 5 */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-            <a href="#section-commitment" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>
+            <a href="#section-commitment" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none' }}>
               Our Commitment
             </a>
             {/* Empty right side */}
@@ -123,24 +128,24 @@ export default function Footer() {
         {/* Mobile Links Grid */}
         <div className="mobile-footer-links">
           <div className="mobile-link-group">
-            <a href="#section-1" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>Why Extended Expertise</a>
-            <a href="#section-2" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>What We Offer — Our Expertise</a>
-            <a href="#section-3" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>How It Works — Simple & Transparent</a>
-            <a href="#section-success-stories" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>Success Stories — Case Highlights</a>
-            <a href="#section-commitment" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>Our Commitment</a>
+            <a href="#section-1" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none' }}>Why Extended Expertise</a>
+            <a href="#section-2" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none' }}>What We Offer — Our Expertise</a>
+            <a href="#section-3" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none' }}>How It Works — Simple & Transparent</a>
+            <a href="#section-success-stories" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none' }}>Success Stories — Case Highlights</a>
+            <a href="#section-commitment" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none' }}>Our Commitment</a>
           </div>
 
           <div className="mobile-link-group" style={{ gap: '16px' }}>
-            <a href="mailto:engagement@gridanddot.com" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+            <a href="mailto:engagement@gridanddot.com" style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
               engagement@gridanddot.com
             </a>
-            <span style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8' }}>
+            <span style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8' }}>
               Mayfair, London
             </span>
           </div>
 
           <div className="mobile-link-group">
-            <a href={`${basePath}/privacy`} style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 700, color: '#F8F8F8', textDecoration: 'none' }}>
+            <a href={`${basePath}/privacy`} style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 600, letterSpacing: '0.02em', color: '#F8F8F8', textDecoration: 'none' }}>
               Privacy Policy
             </a>
           </div>

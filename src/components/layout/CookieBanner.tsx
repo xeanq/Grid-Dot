@@ -40,7 +40,7 @@ export default function CookieBanner() {
       }}
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-        <div style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 400, color: '#0B1215', lineHeight: 1.5 }}>
+        <div style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 400, letterSpacing: '0em', color: '#0B1215', lineHeight: 1.5 }}>
           <p style={{ marginBottom: '16px' }}>
             We use a small number of cookies to keep things<br />
             running and to learn how the site is used.
@@ -65,6 +65,15 @@ export default function CookieBanner() {
               fontWeight: 700,
               cursor: 'pointer',
               textAlign: 'center',
+              transition: 'all 150ms ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#0033FF';
+              e.currentTarget.style.color = '#FFFFFF';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = '#0033FF';
             }}
           >
             Accept
@@ -82,6 +91,15 @@ export default function CookieBanner() {
               fontWeight: 700,
               cursor: 'pointer',
               textAlign: 'center',
+              transition: 'all 150ms ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#0033FF';
+              e.currentTarget.style.color = '#FFFFFF';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = '#0033FF';
             }}
           >
             Reject
