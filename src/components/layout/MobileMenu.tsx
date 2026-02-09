@@ -41,18 +41,26 @@ export default function MobileMenu() {
         <div className="mobile-menu-contact">
           <div className="get-in-touch">Get in touch</div>
           <div className="contact-icons">
-            <a href={`https://wa.me/${CONTACTS.whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-              <img src={`${basePath}/images/icon-whatsapp.svg`} alt="WhatsApp" />
-            </a>
-            <a href={`https://t.me/${CONTACTS.telegram}`} target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-              <img src={`${basePath}/images/icon-telegram.svg`} alt="Telegram" />
-            </a>
-            <a href={`mailto:${CONTACTS.email}`} aria-label="Email">
-              <img src={`${basePath}/images/icon-email.svg`} alt="Email" />
-            </a>
-            <a href={`tel:${CONTACTS.phone}`} aria-label="Phone">
-              <img src={`${basePath}/images/icon-phone-2.svg`} alt="Phone" />
-            </a>
+            {CONTACTS.whatsapp && (
+              <a href={`https://wa.me/${CONTACTS.whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <img src={`${basePath}/images/icon-whatsapp-copy.svg`} alt="WhatsApp" />
+              </a>
+            )}
+            {CONTACTS.telegram && (
+              <a href={`https://t.me/${CONTACTS.telegram}`} target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                <img src={`${basePath}/images/icon-telegram-copy.svg`} alt="Telegram" />
+              </a>
+            )}
+            {CONTACTS.email && (
+              <a href={`mailto:${CONTACTS.email}`} aria-label="Email">
+                <img src={`${basePath}/images/icon-email-copy.svg`} alt="Email" />
+              </a>
+            )}
+            {CONTACTS.phone && (
+              <a href={`tel:${CONTACTS.phone}`} aria-label="Phone">
+                <img src={`${basePath}/images/icon-phone-copy.svg`} alt="Phone" />
+              </a>
+            )}
           </div>
         </div>
 
@@ -135,6 +143,7 @@ export default function MobileMenu() {
         .contact-icons {
           display: flex;
           gap: 20px;
+          color: #0033FF;
         }
 
         .contact-icons a {
@@ -148,8 +157,6 @@ export default function MobileMenu() {
         .contact-icons img {
             width: 100%;
             height: 100%;
-            /* Filter to make icons #0033FF from black */
-            filter: invert(13%) sepia(90%) saturate(5427%) hue-rotate(244deg) brightness(88%) contrast(150%);
         }
 
 
@@ -173,10 +180,7 @@ export default function MobileMenu() {
               gap: 24px;
           }
 
-           /* Correcting filter to strictly match #0033FF */
-           .contact-icons img {
-              filter: invert(12%) sepia(95%) saturate(6000%) hue-rotate(246deg) brightness(95%) contrast(145%);
-           }
+
           
           .mobile-menu-nav a {
               font-size: 20px; 
