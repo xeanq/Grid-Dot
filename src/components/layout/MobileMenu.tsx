@@ -78,8 +78,8 @@ export default function MobileMenu() {
           position: fixed;
           top: 0;
           right: 0;
-          max-height: 60vh;
-          min-height: min-content;
+          height: clamp(400px, 60vh, 90vh);
+          min-height: fit-content;
           background-color: #9AC2E4; /* Blue background */
           z-index: 1001;
           display: flex;

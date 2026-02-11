@@ -34,9 +34,9 @@ export default function Header() {
           />
         </a>
 
-        <span className="header-tagline">
+        <a href="/not-found" className="header-tagline">
           — extended expertise
-        </span>
+        </a>
       </div>
 
       {/* Book a Call Button - Desktop */}
@@ -64,7 +64,7 @@ export default function Header() {
             margin-left: 100px;
             white-space: nowrap;
             transition: text-decoration 0.2s ease;
-            cursor: default;
+            cursor: pointer;
         }
         .header-tagline:hover {
             text-decoration: underline;

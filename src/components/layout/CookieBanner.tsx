@@ -40,7 +40,7 @@ export default function CookieBanner() {
       }}
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-        <div style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 400, letterSpacing: '0em', color: '#0B1215', lineHeight: 1.5 }}>
+        <div style={{ fontFamily: "'Overpass Mono', monospace", fontSize: '16px', fontWeight: 400, letterSpacing: '0em', color: '#0B1215', lineHeight: 1.6 }}>
           <p style={{ marginBottom: '16px' }}>
             We use a small number of cookies to keep things<br />
             running and to learn how the site is used.
