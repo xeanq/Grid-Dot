@@ -70,7 +70,3 @@ grid-dot-main/
 ## 📝 License
 
 All rights reserved © Grid & Dot
-
-## 📧 Contact
-
-For inquiries, visit our [website](https://griddot.co.uk) or contact us directly through the site.
