@@ -21,7 +21,7 @@ export default function AtelierHeader() {
         >
             <div style={{ display: 'flex', alignItems: 'center', marginRight: 'auto' }}>
                 {/* Logo */}
-                <a href="/" style={{ flexShrink: 0, textDecoration: 'none' }}>
+                <a href={`${basePath}/`} style={{ flexShrink: 0, textDecoration: 'none' }}>
                     <img
                         src={`${basePath}/images/Grid&Dot.svg`}
                         alt="Grid&Dot"
@@ -30,7 +30,7 @@ export default function AtelierHeader() {
                 </a>
 
                 {/* Atelier Tagline */}
-                <a href="/" className="header-tagline">
+                <a href={`${basePath}/`} className="header-tagline">
                     — atelier
                 </a>
             </div>

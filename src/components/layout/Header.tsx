@@ -25,7 +25,7 @@ export default function Header() {
     >
       <div className="header-brand-group" style={{ display: 'flex', alignItems: 'center', marginRight: 'auto' }}>
         {/* Logo */}
-        <a href="/" style={{ flexShrink: 0, textDecoration: 'none' }}>
+        <a href={`${basePath}/`} style={{ flexShrink: 0, textDecoration: 'none' }}>
           <img
             src={`${basePath}/images/Grid&Dot.svg`}
             alt="Grid&Dot"
@@ -34,7 +34,7 @@ export default function Header() {
           />
         </a>
 
-        <a href="/not-found" className="header-tagline">
+        <a href={`${basePath}/not-found`} className="header-tagline">
           — extended expertise
         </a>
       </div>
