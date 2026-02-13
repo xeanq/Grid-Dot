@@ -62,8 +62,8 @@ export default function Section4() {
           <path id="text-path-mobile-1" d="M0 30H780" />
         </defs>
         <use href="#text-path-mobile-1" stroke="#9AC2E4" strokeWidth="16" fill="none" />
-        <text fill="#0033FF" fontSize="14" fontFamily="'Overpass Mono', monospace" fontWeight="600" letterSpacing="0.05em" dominantBaseline="middle">
-          <textPath href="#text-path-mobile-1" startOffset="0%">
+        <text fill="#0033FF" fontSize="14" fontFamily="'Overpass Mono', monospace" fontWeight="400" letterSpacing="0.05em" dominantBaseline="middle">
+          <textPath href="#text-path-mobile-1" startOffset="0%" dy="3">
             / Frontend / Backend / QA / Content / CMS / Data / PM / Product / Design / Frontend / Backend / QA / Content / CMS / Data / PM / Product / Design / Frontend / Backend / QA / Content / CMS / Data / PM / Product / Design / Frontend / Backend / QA / Content / CMS / Data / PM / Product / Design
             <animate attributeName="startOffset" from="-100%" to="0%" dur="30s" repeatCount="indefinite" />
           </textPath>
@@ -81,8 +81,8 @@ export default function Section4() {
           <path id="text-path-mobile-2" d="M0 30H780" />
         </defs>
         <use href="#text-path-mobile-2" stroke="#9AC2E4" strokeWidth="16" fill="none" />
-        <text fill="#0033FF" fontSize="14" fontFamily="'Overpass Mono', monospace" fontWeight="600" letterSpacing="0.05em" dominantBaseline="middle">
-          <textPath href="#text-path-mobile-2" startOffset="0%">
+        <text fill="#0033FF" fontSize="14" fontFamily="'Overpass Mono', monospace" fontWeight="400" letterSpacing="0.05em" dominantBaseline="middle">
+          <textPath href="#text-path-mobile-2" startOffset="0%" dy="3">
             / Frontend / Backend / QA / Content / CMS / Data / PM / Product / Design / Frontend / Backend / QA / Content / CMS / Data / PM / Product / Design / Frontend / Backend / QA / Content / CMS / Data / PM / Product / Design / Frontend / Backend / QA / Content / CMS / Data / PM / Product / Design
             <animate attributeName="startOffset" from="-100%" to="0%" dur="30s" repeatCount="indefinite" />
           </textPath>

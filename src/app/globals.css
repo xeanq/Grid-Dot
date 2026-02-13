@@ -30,6 +30,14 @@
 /* Overpass Mono Font */
 @font-face {
   font-family: 'Overpass Mono';
+  src: url('/fonts/overpass/OverpassMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Overpass Mono';
   src: url('/fonts/overpass/OverpassMono-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
