@@ -61,9 +61,9 @@ export default function Section4() {
         xmlns="http://www.w3.org/2000/svg"
         style={{ position: 'absolute', top: '40px', left: '0', width: '100%', zIndex: 20, pointerEvents: 'none' }}
       >
-        <rect width="1200" height="18" fill="#9AC2E4" />
+        <rect width="1200" height="19" fill="#9AC2E4" />
         <defs>
-          <path id="text-path-mobile-1" d="M0 8.5H1200" />
+          <path id="text-path-mobile-1" d="M0 10.5H1200" />
         </defs>
         <text fill="#0033FF" fontSize="14" fontFamily="var(--font-overpass)" fontWeight="400" letterSpacing="0.05em" dominantBaseline="middle">
           <textPath href="#text-path-mobile-1" startOffset="0%">
@@ -83,9 +83,9 @@ export default function Section4() {
         xmlns="http://www.w3.org/2000/svg"
         style={{ position: 'absolute', top: '340px', left: '0', width: '100%', zIndex: 20, pointerEvents: 'none' }}
       >
-        <rect width="1200" height="18" fill="#9AC2E4" />
+        <rect width="1200" height="19" fill="#9AC2E4" />
         <defs>
-          <path id="text-path-mobile-2" d="M0 8.5H1200" />
+          <path id="text-path-mobile-2" d="M0 10.5H1200" />
         </defs>
         <text fill="#0033FF" fontSize="14" fontFamily="var(--font-overpass)" fontWeight="400" letterSpacing="0.05em" dominantBaseline="middle">
           <textPath href="#text-path-mobile-2" startOffset="0%">
