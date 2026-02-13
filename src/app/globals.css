@@ -399,6 +399,10 @@
 }
 
 @media (max-width: 639px) {
+  #section-4 {
+    overflow-x: hidden;
+  }
+
   #section-4 .offset-line-3 {
     transform: none;
   }
