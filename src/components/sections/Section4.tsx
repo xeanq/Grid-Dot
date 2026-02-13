@@ -55,14 +55,14 @@ export default function Section4() {
         className="text-on-path mobile-only"
         src={`${basePath}/images/text-on-path-0-mobile-new.svg`}
         alt=""
-        style={{ top: '30px', left: '0', width: '100%', zIndex: 20, pointerEvents: 'none' }}
+        style={{ top: '40px', left: '0', width: '100%', zIndex: 20, pointerEvents: 'none' }}
       />
       <img
         id="text-on-path-2-mobile"
         className="text-on-path mobile-only"
         src={`${basePath}/images/text-on-path-0-mobile-new.svg`}
         alt=""
-        style={{ top: '320px', left: '0', width: '100%', zIndex: 20, pointerEvents: 'none' }}
+        style={{ top: '330px', left: '0', width: '100%', zIndex: 20, pointerEvents: 'none' }}
       />
 
       {/* Bottom content - two columns */}
